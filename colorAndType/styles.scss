@@ -1,0 +1,12 @@
+/*@import "bootstrap/bootstrap";*/
+@import "mixins.scss";
+@import "fonts.css";
+
+.logo > svg{
+	width: 96px;
+	height: 96px;
+	position: relative;
+	top: 52px;
+	left: 52px;
+}
+
