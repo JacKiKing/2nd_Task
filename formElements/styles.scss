@@ -41,7 +41,7 @@
 	}
 
 	&__list{
-		display: block;
+		display: flex;
 		width: 266px;
 		height: 44px;
 		background: #FFFFFF;
@@ -57,13 +57,20 @@
 		padding: 12.44px 0 17.45px 15px;
 		
 		&-container{
-			&--viewButton{
+			left: 227px;
+			position: relative;
+			top: -26px;
+			width: 40px;
+			height: 40px;
+			cursor: pointer;
+
+			&-viewButton{
+				top: 10px;
+				position: relative;
+				right: -8px;
 				width: 18px;
 				height: 11px;
-				float: right;
-				right: 14px;
-				position: relative;
-				top: 5px;
+
 			}
 		}
 	}
@@ -120,6 +127,9 @@ label{
 
 .input{
 	&__list{
+		top: -40px;
+		position: relative;
+		display: none;
 		width: 266px;
 		height: 119px;
 		background-color: #FFFFFF;
