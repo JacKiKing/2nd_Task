@@ -28,7 +28,7 @@
 	 				<img src="./expand_more.png" alt="развернуть" class="dropdown__list-container-viewButton">
 	 			</div>
 				<ul class="input__list">
-					<li>
+					<li class="input__list-cell">
 				    	<div class="dropdown__left">спальни</div>
 				    	<div class="dropdown__container">
 				    		<a href="#" onclick="minus_0()" id="minus_0">&ndash;</a>
@@ -36,7 +36,7 @@
 					    	<a href="#"  onclick="plus_0()" class="plus">&plus;</a>
 				    	</div>
 				    </li>
-				    <li>
+				    <li class="input__list-cell">
 						<div class="dropdown__left">кровати</div>
 				    	<div class="dropdown__container">
 				    		<a href="#"  onclick="minus_1()" id="minus_1">&ndash;</a>
@@ -44,7 +44,7 @@
 				    		<a href="#"  onclick="plus_1()" class="plus">&plus;</a>
 				    	</div>
 				    </li>
-				    <li>
+				    <li class="input__list-cell">
 				    	<div class="dropdown__left">Ванные комнаты</div>
 				    	<div class="dropdown__container">
 							<a href="#"  onclick="minus_2()" id="minus_2">&ndash;</a>
@@ -53,6 +53,44 @@
 				    	</div>
 				    </li>
 			   </ul>
+
+
+				<div class="dropdown">
+					<div class="dropdown__list_visiters">Сколько гостей?</div>
+				   	<div onclick="showDropdown_visiters()" class="dropdown__list-container dropdown__list-container_visiters">
+		 				<img src="./expand_more.png" alt="развернуть" class="dropdown__list-container-viewButton">
+		 			</div>
+					<ul class="input__list input__list_visiters">
+						<li class="input__list-cell_visiters">
+					    	<div class="dropdown__left">взрослые</div>
+					    	<div class="dropdown__container">
+					    		<a href="#" onclick="minus(0)" class="minus">&ndash;</a>
+						    	<div  class="tablo">0</div>
+						    	<a href="#"  onclick="plus(0)" class="plus">&plus;</a>
+					    	</div>
+					    </li>
+					    <li class="input__list-cell_visiters">
+							<div class="dropdown__left">дети</div>
+					    	<div class="dropdown__container">
+					    		<a href="#"  onclick="minus(1)" class="minus">&ndash;</a>
+					    		<div class="tablo">0</div>
+					    		<a href="#"  onclick="plus(1)" class="plus">&plus;</a>
+					    	</div>
+					    </li>
+					    <li class="input__list-cell_visiters">
+					    	<div class="dropdown__left">младенцы</div>
+					    	<div class="dropdown__container">
+								<a href="#"  onclick="minus(2)" class="minus">&ndash;</a>
+								<div class="tablo">0</div>
+								<a href="#"  onclick="plus(2)" class="plus">&plus;</a>
+					    	</div>
+					    </li>
+					    <li>
+					    	<button class="button__apply" onclick="apply()">Применить</button>
+					    	<button class="button__reset" onclick="clears()">Очистить</button>
+					    </li>
+				    </ul>
+				</div>    
 			</div>
 		</form> 
 	</div>

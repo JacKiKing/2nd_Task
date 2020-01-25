@@ -1,4 +1,4 @@
-	//Button plus, sub
+	//Button dropdown plus, sub
 
 	function plus_0() { 
 		var a = document.getElementById("quantityBadroom_0").innerHTML;
@@ -71,7 +71,42 @@
 		}
 		document.getElementById("quantityBadroom_2").innerHTML= c;
 		document.getElementById('costil_3').innerHTML= c + " ВК";
+		if(c == 0 || c < 0) { document.getElementById('costil_3').innerHTML = "" }
+
 	}
+
+//dropdown visiters
+	function plus(b) {
+		var a = document.getElementsByClassName("tablo")[b].innerHTML;
+		a++;
+		if(a == 1){
+			document.getElementsByClassName("minus")[b].style.color = 'rgba(31, 32, 65, 0.5)';
+			document.getElementsByClassName("minus")[b].style.border = '1px solid rgba(31, 32, 65, 0.5)';
+		}
+		document.getElementsByClassName("tablo")[b].innerHTML= a;
+	}
+
+	function minus(b) {
+		var a = document.getElementsByClassName("tablo")[b].innerHTML;
+		if(a > 0){
+			a--;
+		}
+		if(a == 0){
+			document.getElementsByClassName("minus")[b].style.color = 'rgba(31, 32, 65, 0.25)';
+			document.getElementsByClassName("minus")[b].style.border = '1px solid rgba(31, 32, 65, 0.25)';
+		}
+		document.getElementsByClassName("tablo")[b].innerHTML= a;
+	}
+
+	function showDropdown_visiters(){
+		var item = document.getElementsByClassName('input__list_visiters')[0];
+		if (item.style.display == "none"){
+			item.style.display = "inline-block";
+		}else{
+			item.style.display = "none";
+		}
+	}
+
 // other
 
 	function showDropdown(){
@@ -85,7 +120,9 @@
 
 	function bedroom(a){
 		var a_text;
+		if ( a < 0){ a_text = ""}
 		switch(a){
+			default: 
 			case 0:
 				a = "";
 				a_text = a + " ";
@@ -109,15 +146,18 @@
 				a_text = "нет комнат";
 
 		}
+		
 		document.getElementById('costil_1').innerHTML= a_text;
 	}
 
 	function bed(a){
 		var b_text;
 		switch(a){
+			case undefined:
+			default: 
 			case 0:
 				a = "";
-				b_text =a + " ";
+				b_text = a + " ";
 				break;
 			case 1:
 				b_text = a + " кровать,";
@@ -135,5 +175,20 @@
 				b_text = a + " кроватей,";
 				break;
 		}
+
 			document.getElementById('costil_2').innerHTML= b_text;
 	}
+
+function apply(){
+	var num_one = Number(document.getElementsByClassName('tablo')[0].innerHTML);
+	var num_two = Number(document.getElementsByClassName('tablo')[1].innerHTML);
+	var num_three = Number(document.getElementsByClassName('tablo')[2].innerHTML);
+	document.getElementsByClassName('dropdown__list_visiters')[0].innerHTML = num_one + num_two + num_three;
+}
+
+function clears(){
+	document.getElementsByClassName('tablo')[0].innerHTML = "0";
+	document.getElementsByClassName('tablo')[1].innerHTML = "0";
+	document.getElementsByClassName('tablo')[2].innerHTML = "0";
+	document.getElementsByClassName('dropdown__list_visiters')[0].innerHTML = "0";
+}
