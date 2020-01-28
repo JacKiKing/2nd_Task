@@ -82,6 +82,7 @@
 		if(a == 1){
 			document.getElementsByClassName("minus")[b].style.color = 'rgba(31, 32, 65, 0.5)';
 			document.getElementsByClassName("minus")[b].style.border = '1px solid rgba(31, 32, 65, 0.5)';
+			document.getElementsByClassName("button__reset")[0].style.display = 'inline-block';
 		}
 		document.getElementsByClassName("tablo")[b].innerHTML= a;
 	}
@@ -94,6 +95,7 @@
 		if(a == 0){
 			document.getElementsByClassName("minus")[b].style.color = 'rgba(31, 32, 65, 0.25)';
 			document.getElementsByClassName("minus")[b].style.border = '1px solid rgba(31, 32, 65, 0.25)';
+			document.getElementsByClassName("button__reset")[0].style.display = 'none';
 		}
 		document.getElementsByClassName("tablo")[b].innerHTML= a;
 	}
@@ -110,7 +112,7 @@
 // other
 
 	function showDropdown(){
-		var item = document.getElementsByClassName('input__list')[0];
+		var item = document.getElementsByClassName('input__list_dropdown')[0];
 		if (item.style.display == "none"){
 			item.style.display = "inline-block";
 		}else{
@@ -192,3 +194,4 @@ function clears(){
 	document.getElementsByClassName('tablo')[2].innerHTML = "0";
 	document.getElementsByClassName('dropdown__list_visiters')[0].innerHTML = "0";
 }
+

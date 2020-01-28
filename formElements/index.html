@@ -3,6 +3,17 @@
 <head>
 	<meta charset="UTF-8">
 	<script src="script.js"></script>
+<!-- bootstrap -->
+	<link rel="stylesheet" href="https://snipp.ru/cdn/bootstrap/3.4.1/bootstrap.min.css">
+
+	<script src="https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://snipp.ru/cdn/maskedinput/jquery.maskedinput.min.js"></script>
+
+<!-- calendar date - date -->
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 	<title>Document</title>
 </head>
 <body>
@@ -17,82 +28,123 @@
 		<form action="#">
 			<label for="dropdown__input">TEXT FIELD</label>
 			<br>
-		 	<div class="dropdown">
-		 		<input class="dropdown__input" type="text" value="Email">
-		 		<div class="dropdown__list">
-		 			<div id="costil_1"></div>
-					<div id="costil_2"></div>
-					<div id="costil_3"></div>
-		 		</div>
-		 		<div onclick="showDropdown()" class="dropdown__list-container">
-	 				<img src="./expand_more.png" alt="развернуть" class="dropdown__list-container-viewButton">
-	 			</div>
-				<ul class="input__list">
-					<li class="input__list-cell">
-				    	<div class="dropdown__left">спальни</div>
-				    	<div class="dropdown__container">
-				    		<a href="#" onclick="minus_0()" id="minus_0">&ndash;</a>
-					    	<div  id="quantityBadroom_0">0</div>
-					    	<a href="#"  onclick="plus_0()" class="plus">&plus;</a>
-				    	</div>
-				    </li>
-				    <li class="input__list-cell">
-						<div class="dropdown__left">кровати</div>
-				    	<div class="dropdown__container">
-				    		<a href="#"  onclick="minus_1()" id="minus_1">&ndash;</a>
-				    		<div id="quantityBadroom_1">0</div>
-				    		<a href="#"  onclick="plus_1()" class="plus">&plus;</a>
-				    	</div>
-				    </li>
-				    <li class="input__list-cell">
-				    	<div class="dropdown__left">Ванные комнаты</div>
-				    	<div class="dropdown__container">
-							<a href="#"  onclick="minus_2()" id="minus_2">&ndash;</a>
-							<div id="quantityBadroom_2">0</div>
-							<a href="#"  onclick="plus_2()" class="plus">&plus;</a>
-				    	</div>
-				    </li>
-			   </ul>
-
-
-				<div class="dropdown">
-					<div class="dropdown__list_visiters">Сколько гостей?</div>
-				   	<div onclick="showDropdown_visiters()" class="dropdown__list-container dropdown__list-container_visiters">
-		 				<img src="./expand_more.png" alt="развернуть" class="dropdown__list-container-viewButton">
-		 			</div>
-					<ul class="input__list input__list_visiters">
-						<li class="input__list-cell_visiters">
-					    	<div class="dropdown__left">взрослые</div>
-					    	<div class="dropdown__container">
-					    		<a href="#" onclick="minus(0)" class="minus">&ndash;</a>
-						    	<div  class="tablo">0</div>
-						    	<a href="#"  onclick="plus(0)" class="plus">&plus;</a>
-					    	</div>
-					    </li>
-					    <li class="input__list-cell_visiters">
-							<div class="dropdown__left">дети</div>
-					    	<div class="dropdown__container">
-					    		<a href="#"  onclick="minus(1)" class="minus">&ndash;</a>
-					    		<div class="tablo">0</div>
-					    		<a href="#"  onclick="plus(1)" class="plus">&plus;</a>
-					    	</div>
-					    </li>
-					    <li class="input__list-cell_visiters">
-					    	<div class="dropdown__left">младенцы</div>
-					    	<div class="dropdown__container">
-								<a href="#"  onclick="minus(2)" class="minus">&ndash;</a>
-								<div class="tablo">0</div>
-								<a href="#"  onclick="plus(2)" class="plus">&plus;</a>
-					    	</div>
-					    </li>
-					    <li>
-					    	<button class="button__apply" onclick="apply()">Применить</button>
-					    	<button class="button__reset" onclick="clears()">Очистить</button>
-					    </li>
-				    </ul>
-				</div>    
-			</div>
+			<input class="dropdown__input" type="text" placeholder="Email">
 		</form> 
+		<br>
+		<label for="dropdown_visiters">Dropdown</label>
+		<div name="dropdown_visiters" class="dropdown">
+			<div class="dropdown__list_visiters">Сколько гостей?</div>
+		   	<div onclick="showDropdown_visiters()" class="dropdown__list-container dropdown__list-container_visiters">
+ 				<img src="./expand_more.png" alt="развернуть" class="dropdown__list-container-viewButton">
+ 			</div>
+			<ul class="input__list input__list_visiters">
+				<li class="input__list-cell_visiters">
+			    	<div class="dropdown__left">взрослые</div>
+			    	<div class="dropdown__container">
+			    		<a href="#" onclick="minus(0)" class="minus">&ndash;</a>
+				    	<div  class="tablo">0</div>
+				    	<a href="#"  onclick="plus(0)" class="plus">&plus;</a>
+			    	</div>
+			    </li>
+			    <li class="input__list-cell_visiters">
+					<div class="dropdown__left">дети</div>
+			    	<div class="dropdown__container">
+			    		<a href="#"  onclick="minus(1)" class="minus">&ndash;</a>
+			    		<div class="tablo">0</div>
+			    		<a href="#"  onclick="plus(1)" class="plus">&plus;</a>
+			    	</div>
+			    </li>
+			    <li class="input__list-cell_visiters">
+			    	<div class="dropdown__left">младенцы</div>
+			    	<div class="dropdown__container">
+						<a href="#"  onclick="minus(2)" class="minus">&ndash;</a>
+						<div class="tablo">0</div>
+						<a href="#"  onclick="plus(2)" class="plus">&plus;</a>
+			    	</div>
+			    </li>
+			    <li>
+			    	<button class="button__apply" onclick="apply()">Применить</button>
+			    	<button class="button__reset" onclick="clears()">Очистить</button>
+			    </li>
+		    </ul>
+		</div>    
+		
+		<!-- VISITERS -->
+
+		<label for="dropdown_visiters">Dropdown</label>
+	 	<div name="dropdown_visiters" class="dropdown">
+	 		<div class="dropdown__list">
+	 			<div id="costil_1"></div>
+				<div id="costil_2"></div>
+				<div id="costil_3"></div>
+	 		</div>
+	 		<div onclick="showDropdown()" class="dropdown__list-container">
+ 				<img src="./expand_more.png" alt="развернуть" class="dropdown__list-container-viewButton">
+ 			</div>
+			<ul class="input__list input__list_dropdown">
+				<li class="input__list-cell">
+			    	<div class="dropdown__left">спальни</div>
+			    	<div class="dropdown__container">
+			    		<a href="#" onclick="minus_0()" id="minus_0">&ndash;</a>
+				    	<div  id="quantityBadroom_0">0</div>
+				    	<a href="#"  onclick="plus_0()" class="plus">&plus;</a>
+			    	</div>
+			    </li>
+			    <li class="input__list-cell">
+					<div class="dropdown__left">кровати</div>
+			    	<div class="dropdown__container">
+			    		<a href="#"  onclick="minus_1()" id="minus_1">&ndash;</a>
+			    		<div id="quantityBadroom_1">0</div>
+			    		<a href="#"  onclick="plus_1()" class="plus">&plus;</a>
+			    	</div>
+			    </li>
+			    <li class="input__list-cell">
+			    	<div class="dropdown__left">Ванные комнаты</div>
+			    	<div class="dropdown__container">
+						<a href="#"  onclick="minus_2()" id="minus_2">&ndash;</a>
+						<div id="quantityBadroom_2">0</div>
+						<a href="#"  onclick="plus_2()" class="plus">&plus;</a>
+			    	</div>
+			    </li>
+		   </ul>
+		</div>
+
+		<!-- mask-date -->
+		<label for="maskedTextField">masked text field</label>
+		<p><input type="text" id="date" name="maskedTextField" value="ДД.ММ.ГГГГ" placeholder="ДД.ММ.ГГГГ" class="mask-date form-control"></p>
+		<script>$("#date").mask("99.99", {placeholder: "дд.мм" });</script>
+			
+		
+		<!-- Календарь -->
+		<label for="date_dropdown">date Dropdown</label>
+	 	<div name="date_dropdown" class="dropdown__list-container dropdown__list-container_date">
+			<input class="input__date" type="date">
+		</div>
+
+
+		<!-- календарь туда-обратно -->
+		<input type="text" name="datefilter" value="01/01 - 10/01" />
+
+
+		<script type="text/javascript">
+		$(function() {
+			  $('input[name="datefilter"]').daterangepicker({
+			      autoUpdateInput: false,
+			      locale: {
+			          cancelLabel: 'Clear'
+			      }
+			  });
+
+			  $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
+			      $(this).val(picker.startDate.format('DD/MM') + ' - ' + picker.endDate.format('DD/MM'));
+			  });
+
+			  $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
+			      $(this).val('');
+			  });
+
+			});
+		</script>
 	</div>
 </body>
 </html>
