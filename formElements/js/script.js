@@ -194,4 +194,3 @@ function clears(){
 	document.getElementsByClassName('tablo')[2].innerHTML = "0";
 	document.getElementsByClassName('dropdown__list_visiters')[0].innerHTML = "0";
 }
-

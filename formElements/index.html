@@ -10,10 +10,10 @@
 	<script src="https://snipp.ru/cdn/maskedinput/jquery.maskedinput.min.js"></script>
 
 <!-- calendar date - date -->
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
 	<title>Document</title>
 </head>
 <body>
@@ -111,7 +111,7 @@
 
 		<!-- mask-date -->
 		<label for="maskedTextField">masked text field</label>
-		<p><input type="text" id="date" name="maskedTextField" value="ДД.ММ.ГГГГ" placeholder="ДД.ММ.ГГГГ" class="mask-date form-control"></p>
+		<p><input type="text" id="date" name="maskedTextField"  placeholder="ДД.ММ.ГГГГ" class="mask-date form-control"></p>
 		<script>$("#date").mask("99.99", {placeholder: "дд.мм" });</script>
 			
 		
@@ -123,28 +123,71 @@
 
 
 		<!-- календарь туда-обратно -->
-		<input type="text" name="datefilter" value="01/01 - 10/01" />
+		<input id="d">
+		<script>
+			(function ($) {
 
+			    $.fn.daterange = function () {
+			        // опции
+			        var opts = $.extend({
+			        		"monthNames": ['Января','Февраля','Марта','Апреля','Майя','Июня','Июля','Августа','Сентября','Октября','Ноября','Декабря'],
+			            "monthNamesShort": ['Янв','Фев','Мар','Апр','Май','Июн',
+			                    'Июл','Авг','Сен','Окт','Ноя','Дек'],
+			            "dayNames": ['воскресенье','понедельник','вторник','среда','четверг','пятница','суббота'],
+									"dayNamesShort": ['вск','пнд','втр','срд','чтв','птн','сбт'],
+			            "dayNamesMin": ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],
+			            "dateFormat": "d M",
+			            "changeMonth": false,
+			            "changeYear": false,
+			            "numberOfMonths": 2,
+			            "rangeSeparator": "-"
+			        }, arguments[0] || {}, {
+			            // обработчики событий datepicker
+			            // закрытие
+			            "onClose": function (dateText, inst) {
+			                if ($.isFunction(opts.callback)) {
+			                    opts.callback.apply(this, arguments);
+			                }
+			            },
+			            // выбор даты
+			            "onSelect": function (dateText, inst) {
+			                var textStart;
+			                if (!inst.rangeStart) {
+			                    inst.inline = true;
+			                    inst.rangeStart = dateText;
+			                } else {
+			                    inst.inline = false;
+			                    textStart = inst.rangeStart;
+			                    if (textStart !== dateText) {
+			                        $(this).val(textStart + " " + opts.rangeSeparator + " " + dateText);
+			                        inst.rangeStart = null;
+			                    }
+			                }
+			            }
+			        });
 
-		<script type="text/javascript">
-		$(function() {
-			  $('input[name="datefilter"]').daterangepicker({
-			      autoUpdateInput: false,
-			      locale: {
-			          cancelLabel: 'Clear'
-			      }
-			  });
+			        return this.each(function () {
+			            var input = $(this);
+			            if (input.is("input")) {
+			                input.datepicker(opts);
+			            }
+			        });
+			    };
 
-			  $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
-			      $(this).val(picker.startDate.format('DD/MM') + ' - ' + picker.endDate.format('DD/MM'));
-			  });
+			}(jQuery));
 
-			  $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
-			      $(this).val('');
-			  });
-
+			$("#d").daterange({
+			    callback: function (range) { 
+			    }
 			});
 		</script>
+
+<style>
+	
+</style>
+
 	</div>
 </body>
 </html>
+
+
