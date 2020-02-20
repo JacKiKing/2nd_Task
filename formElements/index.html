@@ -17,14 +17,14 @@
 	<title>Document</title>
 </head>
 <body>
+	<div class="logo">
+		<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M23.9989 32.4712C23.2224 32.4712 22.5871 31.8359 22.5871 31.0594C22.5871 25.6241 18.14 21.177 12.7047 21.177C11.9283 21.177 11.293 20.5418 11.293 19.7653C11.293 18.9888 11.9283 18.3535 12.7047 18.3535C19.7283 18.3535 25.4106 24.0359 25.4106 31.0594C25.4106 31.8359 24.7753 32.4712 23.9989 32.4712Z" fill="#1F2041" fill-opacity="0.25"/>
+			<path d="M36.7068 19.7653C36.7068 20.5418 36.0715 21.177 35.295 21.177C31.9421 21.177 28.9421 22.8712 27.1774 25.4476C26.7892 24.4594 26.3303 23.5418 25.7656 22.6947C28.095 20.0123 31.5186 18.3535 35.295 18.3535C36.0715 18.3535 36.7068 18.9888 36.7068 19.7653Z" fill="#1F2041" fill-opacity="0.25"/>
+			<path d="M24 48C10.7647 48 0 37.2353 0 24C0 10.7647 10.7647 0 24 0C37.2353 0 48 10.7647 48 24C48 37.2353 37.2353 48 24 48ZM24 2.82353C12.3176 2.82353 2.82353 12.3176 2.82353 24C2.82353 35.6824 12.3176 45.1765 24 45.1765C35.6824 45.1765 45.1765 35.6824 45.1765 24C45.1765 12.3176 35.6824 2.82353 24 2.82353Z" fill="#1F2041" fill-opacity="0.25"/>
+		</svg>
+	</div>
 	<div class="container">
-		<div class="logo">
-			<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<path d="M23.9989 32.4712C23.2224 32.4712 22.5871 31.8359 22.5871 31.0594C22.5871 25.6241 18.14 21.177 12.7047 21.177C11.9283 21.177 11.293 20.5418 11.293 19.7653C11.293 18.9888 11.9283 18.3535 12.7047 18.3535C19.7283 18.3535 25.4106 24.0359 25.4106 31.0594C25.4106 31.8359 24.7753 32.4712 23.9989 32.4712Z" fill="#1F2041" fill-opacity="0.25"/>
-				<path d="M36.7068 19.7653C36.7068 20.5418 36.0715 21.177 35.295 21.177C31.9421 21.177 28.9421 22.8712 27.1774 25.4476C26.7892 24.4594 26.3303 23.5418 25.7656 22.6947C28.095 20.0123 31.5186 18.3535 35.295 18.3535C36.0715 18.3535 36.7068 18.9888 36.7068 19.7653Z" fill="#1F2041" fill-opacity="0.25"/>
-				<path d="M24 48C10.7647 48 0 37.2353 0 24C0 10.7647 10.7647 0 24 0C37.2353 0 48 10.7647 48 24C48 37.2353 37.2353 48 24 48ZM24 2.82353C12.3176 2.82353 2.82353 12.3176 2.82353 24C2.82353 35.6824 12.3176 45.1765 24 45.1765C35.6824 45.1765 45.1765 35.6824 45.1765 24C45.1765 12.3176 35.6824 2.82353 24 2.82353Z" fill="#1F2041" fill-opacity="0.25"/>
-			</svg>
-		</div>
 		<form action="#">
 			<label for="dropdown__input">TEXT FIELD</label>
 			<br>
@@ -114,7 +114,7 @@
 		<p><input type="text" id="date" name="maskedTextField"  placeholder="ДД.ММ.ГГГГ" class="mask-date form-control"></p>
 		<script>$("#date").mask("99.99", {placeholder: "дд.мм" });</script>
 			
-		
+
 		<!-- Календарь -->
 		<label for="date_dropdown">date Dropdown</label>
 	 	<div name="date_dropdown" class="dropdown__list-container dropdown__list-container_date">
@@ -123,70 +123,72 @@
 
 
 		<!-- календарь туда-обратно -->
-		<input id="d">
-		<script>
-			(function ($) {
+		<label class="label_margin" for="datepicker">date Dropdown</label>
+	 	<div name="datepicker" class="dropdown__list-container_margin dropdown__list-container dropdown__list-container_date">
+			<input id="d" onclick="date__calendar()">
+		</div>
 
-			    $.fn.daterange = function () {
-			        // опции
-			        var opts = $.extend({
-			        		"monthNames": ['Января','Февраля','Марта','Апреля','Майя','Июня','Июля','Августа','Сентября','Октября','Ноября','Декабря'],
-			            "monthNamesShort": ['Янв','Фев','Мар','Апр','Май','Июн',
-			                    'Июл','Авг','Сен','Окт','Ноя','Дек'],
-			            "dayNames": ['воскресенье','понедельник','вторник','среда','четверг','пятница','суббота'],
-									"dayNamesShort": ['вск','пнд','втр','срд','чтв','птн','сбт'],
-			            "dayNamesMin": ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],
-			            "dateFormat": "d M",
-			            "changeMonth": false,
-			            "changeYear": false,
-			            "numberOfMonths": 2,
-			            "rangeSeparator": "-"
-			        }, arguments[0] || {}, {
-			            // обработчики событий datepicker
-			            // закрытие
-			            "onClose": function (dateText, inst) {
-			                if ($.isFunction(opts.callback)) {
-			                    opts.callback.apply(this, arguments);
-			                }
-			            },
-			            // выбор даты
-			            "onSelect": function (dateText, inst) {
-			                var textStart;
-			                if (!inst.rangeStart) {
-			                    inst.inline = true;
-			                    inst.rangeStart = dateText;
-			                } else {
-			                    inst.inline = false;
-			                    textStart = inst.rangeStart;
-			                    if (textStart !== dateText) {
-			                        $(this).val(textStart + " " + opts.rangeSeparator + " " + dateText);
-			                        inst.rangeStart = null;
-			                    }
-			                }
-			            }
-			        });
 
-			        return this.each(function () {
-			            var input = $(this);
-			            if (input.is("input")) {
-			                input.datepicker(opts);
-			            }
-			        });
-			    };
 
-			}(jQuery));
+<!-- Email -->
+		<label class="label_margin" for="form__email">Subscription text field</label>
+		<div name="form__email" class="dropdown__list-container dropdown__list-container_date">
+			<input class="form__email" type="email" value="Email">
+			<div class="form__email-right">&rarr;</div>
+		</div>
 
-			$("#d").daterange({
-			    callback: function (range) { 
-			    }
-			});
-		</script>
 
-<style>
-	
-</style>
+<!-- expandable checkbox list -->
+		<div class="services">
+			<p class="services__title" onclick="show_Services()">expandable checkbox list <img class="service__title-img" src="./expand_more.png" alt="развернуть"></p>
+			<div class="services__title-container">
+				<p class="services__checkbox"><input type="checkbox" name="additional services" value="Завтрак">Завтрак</p>
+				<p class="services__checkbox"><input type="checkbox" name="additional services" value="Письменный стол" checked>Письменный стол</p>
+				<p class="services__checkbox"><input type="checkbox" name="additional services" value="Стул для кормления" checked>Стул для кормления</p>
+				<p class="services__checkbox"><input type="checkbox" name="additional services" value="Кроватка">Кроватка</p>
+				<p class="services__checkbox"><input type="checkbox" name="additional services" value="Телевизор">Телевизор</p>
+				<p class="services__checkbox"><input type="checkbox" name="additional services" value="Шампунь">Шампунь</p>
+				<p class="services__checkbox"><input type="checkbox" name="additional services" value="Телевизор">Телевизор</p>
+				<p class="services__checkbox"><input type="checkbox" name="additional services" value="Шампунь">Шампунь</p>
+			</div>
+		</div>
+
+<!-- 	block dignities -->
+		<div class="dignities">
+			<div class="dignities__block">
+				<img src="./insert_emoticon.png" alt="Комфорт" class="dignities__block-img">
+				<div class="dignities__block-text">
+					<div class="dignities__block-text-title">Комфорт</div>
+					<div class="dignities__block-text-subtext">Шумопоглощающие стены</div>
+				</div>
+			</div>
+			<div class="dignities__block">
+				<img src="./location_city.png" alt="Удобство" class="dignities__block-img">
+				<div class="dignities__block-text">
+					<div class="dignities__block-text-title">Удобство</div>
+					<div class="dignities__block-text-subtext">Окно в каждой из спален</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- checkbox buttons -->
+	<div class="checkboxConteiner">
+		<p class="services__title">chebox button</p>
+		<p class="services__checkbox"><input type="checkbox" name="additional other services" value="курить">Можно курить</p>
+		<p class="services__checkbox"><input type="checkbox" name="additional other services" value="питомцы">Можно с питомцами</p>
+		<p class="services__checkbox"><input type="checkbox" name="additional other services" value="гости">Можно пригласить гостей (до 10 человек)</p>
+	</div>
+
+	<div class="radioButton">
+
+		<input type="radio" name="radio" class="myradio" id="radio" />
+		<label for="radio">Первая кнопка</label><br><br>
+		<input type="radio" name="radio" class="myradio" id="radiotw" />
+		<label for="radiotw">Вторая кнопка</label>
 
 	</div>
+
+
 </body>
 </html>
 
