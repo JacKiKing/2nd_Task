@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<script src="script.js"></script>
 <!-- bootstrap -->
 	<link rel="stylesheet" href="https://snipp.ru/cdn/bootstrap/3.4.1/bootstrap.min.css">
 
@@ -112,7 +111,6 @@
 		<!-- mask-date -->
 		<label for="maskedTextField">masked text field</label>
 		<p><input type="text" id="date" name="maskedTextField"  placeholder="ДД.ММ.ГГГГ" class="mask-date form-control"></p>
-		<script>$("#date").mask("99.99", {placeholder: "дд.мм" });</script>
 			
 
 		<!-- Календарь -->
@@ -125,11 +123,12 @@
 		<!-- календарь туда-обратно -->
 		<label class="label_margin" for="datepicker">date Dropdown</label>
 	 	<div name="datepicker" class="dropdown__list-container_margin dropdown__list-container dropdown__list-container_date">
-			<input id="d" onclick="date__calendar()">
+			<input id="d">
 		</div>
 
 
 
+		
 <!-- Email -->
 		<label class="label_margin" for="form__email">Subscription text field</label>
 		<div name="form__email" class="dropdown__list-container dropdown__list-container_date">
@@ -180,15 +179,160 @@
 	</div>
 
 	<div class="radioButton">
-
 		<input type="radio" name="radio" class="myradio" id="radio" />
-		<label for="radio">Первая кнопка</label><br><br>
+		<label for="radio">Мужчина</label><br><br>
 		<input type="radio" name="radio" class="myradio" id="radiotw" />
-		<label for="radiotw">Вторая кнопка</label>
+		<label for="radiotw">Женщина</label>
 
 	</div>
 
+	<!-- toggle -->
+	<div class="toggle">
+		<div class="toggle__title">TOGGLE</div>
+		<div class="toggle__label">Получать спецпредложения</div>
+        <div class="button r" id="button-1">
+        	<input type="checkbox" class="checkbox">
+	        <div class="knobs"></div>
+	        <div class="layer"></div>
+        </div>
+	</div>
 
+	<!-- like button -->
+	<div class="likeButton">
+		<div class="likeButton__title">Like Button</div>
+		<div class="likeButton__button" onclick="like()">
+			<svg width="10" height="8" class="likeButton__button-img" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M5.03906 6.73438C5.66406 6.17448 6.1263 5.7513 6.42578 5.46484C6.72526 5.17839 7.05078 4.83984 7.40234 4.44922C7.75391 4.05859 7.99479 3.71354 8.125 3.41406C8.26823 3.11458 8.33984 2.82161 8.33984 2.53516C8.33984 2.11849 8.19661 1.77344 7.91016 1.5C7.63672 1.22656 7.29167 1.08984 6.875 1.08984C6.54948 1.08984 6.24349 1.18099 5.95703 1.36328C5.68359 1.54557 5.49479 1.77995 5.39062 2.06641H4.60938C4.50521 1.77995 4.3099 1.54557 4.02344 1.36328C3.75 1.18099 3.45052 1.08984 3.125 1.08984C2.70833 1.08984 2.35677 1.22656 2.07031 1.5C1.79688 1.77344 1.66016 2.11849 1.66016 2.53516C1.66016 2.82161 1.72526 3.11458 1.85547 3.41406C1.9987 3.71354 2.24609 4.05859 2.59766 4.44922C2.94922 4.83984 3.27474 5.17839 3.57422 5.46484C3.8737 5.7513 4.33594 6.17448 4.96094 6.73438L5 6.77344L5.03906 6.73438ZM6.875 0.25C7.52604 0.25 8.06641 0.471354 8.49609 0.914062C8.9388 1.35677 9.16016 1.89714 9.16016 2.53516C9.16016 2.91276 9.08854 3.28385 8.94531 3.64844C8.80208 4 8.53516 4.39714 8.14453 4.83984C7.76693 5.28255 7.42188 5.65365 7.10938 5.95312C6.79688 6.2526 6.29557 6.71484 5.60547 7.33984L5 7.88672L4.39453 7.35938C3.49609 6.55208 2.84505 5.94661 2.44141 5.54297C2.05078 5.13932 1.6862 4.66406 1.34766 4.11719C1.00911 3.57031 0.839844 3.04297 0.839844 2.53516C0.839844 1.89714 1.05469 1.35677 1.48438 0.914062C1.92708 0.471354 2.47396 0.25 3.125 0.25C3.88021 0.25 4.50521 0.542969 5 1.12891C5.49479 0.542969 6.11979 0.25 6.875 0.25Z" fill="#1F2041" fill-opacity="0.25"/>
+			</svg>
+			<svg class="likeButton__button-img_active" width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M4.93026 7.88672L4.3248 7.33984C3.63469 6.71484 3.13339 6.2526 2.82089 5.95312C2.50839 5.65365 2.15683 5.28255 1.7662 4.83984C1.3886 4.39714 1.12818 4 0.984952 3.64844C0.841723 3.28385 0.770108 2.91276 0.770108 2.53516C0.770108 1.89714 0.984952 1.35677 1.41464 0.914062C1.85735 0.471354 2.40422 0.25 3.05526 0.25C3.81047 0.25 4.43547 0.542969 4.93026 1.12891C5.42506 0.542969 6.05006 0.25 6.80526 0.25C7.45631 0.25 7.99667 0.471354 8.42636 0.914062C8.86907 1.35677 9.09042 1.89714 9.09042 2.53516C9.09042 3.04297 8.92115 3.57031 8.58261 4.11719C8.24407 4.66406 7.87297 5.13932 7.46933 5.54297C7.0787 5.94661 6.43417 6.55208 5.53573 7.35938L4.93026 7.88672Z" fill="#BC9CFF"/>
+			</svg>
+			<div class="likeButton__button-scoore">2</div>
+		</div>
+	</div>
+
+	<div class="rateButton">
+<!-- 		<ul class="rateButton__list">
+			<li class="rateButton__list-item">
+					<input type="radio" id="star-5" name="rating" value="5">
+					<label for="star-5" title="Оценка «5»">
+						<svg class="rateButton__list-item" width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M10 15.25L3.8125 19L5.45312 11.9688L0.015625 7.23438L7.1875 6.625L10 0.015625L12.8125 6.625L19.9844 7.23438L14.5469 11.9688L16.1875 19L10 15.25Z" fill="url(#paint0_linear)"/>
+							<defs>
+								<linearGradient id="paint0_linear" x1="10" y1="-2" x2="10" y2="22" gradientUnits="userSpaceOnUse">
+								<stop stop-color="#BC9CFF"/>
+								<stop offset="1" stop-color="#8BA4F9"/>
+								</linearGradient>
+							</defs>
+						</svg>
+						<svg class="rateButton__list-item_inside" width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M10 13.4219L13.75 15.6719L12.7656 11.4062L16.0938 8.5L11.6875 8.125L10 4.09375L8.3125 8.125L3.90625 8.5L7.23438 11.4062L6.25 15.6719L10 13.4219ZM19.9844 7.23438L14.5469 11.9688L16.1875 19L10 15.25L3.8125 19L5.45312 11.9688L0.015625 7.23438L7.1875 6.625L10 0.015625L12.8125 6.625L19.9844 7.23438Z" fill="url(#paint0_linear)"/>
+							<defs>
+								<linearGradient id="paint0_linear" x1="10" y1="-2" x2="10" y2="22" gradientUnits="userSpaceOnUse">
+								<stop stop-color="#BC9CFF"/>
+								<stop offset="1" stop-color="#8BA4F9"/>
+								</linearGradient>
+							</defs>
+						</svg>
+					</label>
+			</li>
+			<li class="rateButton__list-item">
+					<input type="radio" id="star-4" name="rating" value="4">
+					<label for="star-4" title="Оценка «4»">
+						<svg class="rateButton__list-item" width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M10 15.25L3.8125 19L5.45312 11.9688L0.015625 7.23438L7.1875 6.625L10 0.015625L12.8125 6.625L19.9844 7.23438L14.5469 11.9688L16.1875 19L10 15.25Z" fill="url(#paint0_linear)"/>
+							<defs>
+								<linearGradient id="paint0_linear" x1="10" y1="-2" x2="10" y2="22" gradientUnits="userSpaceOnUse">
+								<stop stop-color="#BC9CFF"/>
+								<stop offset="1" stop-color="#8BA4F9"/>
+								</linearGradient>
+							</defs>
+						</svg>
+						<svg class="rateButton__list-item_inside" width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M10 13.4219L13.75 15.6719L12.7656 11.4062L16.0938 8.5L11.6875 8.125L10 4.09375L8.3125 8.125L3.90625 8.5L7.23438 11.4062L6.25 15.6719L10 13.4219ZM19.9844 7.23438L14.5469 11.9688L16.1875 19L10 15.25L3.8125 19L5.45312 11.9688L0.015625 7.23438L7.1875 6.625L10 0.015625L12.8125 6.625L19.9844 7.23438Z" fill="url(#paint0_linear)"/>
+							<defs>
+								<linearGradient id="paint0_linear" x1="10" y1="-2" x2="10" y2="22" gradientUnits="userSpaceOnUse">
+								<stop stop-color="#BC9CFF"/>
+								<stop offset="1" stop-color="#8BA4F9"/>
+								</linearGradient>
+							</defs>
+						</svg>
+					</label> 
+			</li>
+			<li class="rateButton__list-item">
+				<input type="radio" id="star-3" name="rating" value="3">
+				<label for="star-3" title="Оценка «3»">
+					<svg class="rateButton__list-item" width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M10 15.25L3.8125 19L5.45312 11.9688L0.015625 7.23438L7.1875 6.625L10 0.015625L12.8125 6.625L19.9844 7.23438L14.5469 11.9688L16.1875 19L10 15.25Z" fill="url(#paint0_linear)"/>
+						<defs>
+							<linearGradient id="paint0_linear" x1="10" y1="-2" x2="10" y2="22" gradientUnits="userSpaceOnUse">
+							<stop stop-color="#BC9CFF"/>
+							<stop offset="1" stop-color="#8BA4F9"/>
+							</linearGradient>
+						</defs>
+					</svg>
+					<svg class="rateButton__list-item_inside" width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M10 13.4219L13.75 15.6719L12.7656 11.4062L16.0938 8.5L11.6875 8.125L10 4.09375L8.3125 8.125L3.90625 8.5L7.23438 11.4062L6.25 15.6719L10 13.4219ZM19.9844 7.23438L14.5469 11.9688L16.1875 19L10 15.25L3.8125 19L5.45312 11.9688L0.015625 7.23438L7.1875 6.625L10 0.015625L12.8125 6.625L19.9844 7.23438Z" fill="url(#paint0_linear)"/>
+						<defs>
+							<linearGradient id="paint0_linear" x1="10" y1="-2" x2="10" y2="22" gradientUnits="userSpaceOnUse">
+							<stop stop-color="#BC9CFF"/>
+							<stop offset="1" stop-color="#8BA4F9"/>
+							</linearGradient>
+						</defs>
+					</svg>
+				</label> 
+			</li>
+			<li class="rateButton__list-item">
+				<input type="radio" id="star-2" name="rating" value="2">
+				<label for="star-2" title="Оценка «2»">
+					<svg class="rateButton__list-item" width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M10 15.25L3.8125 19L5.45312 11.9688L0.015625 7.23438L7.1875 6.625L10 0.015625L12.8125 6.625L19.9844 7.23438L14.5469 11.9688L16.1875 19L10 15.25Z" fill="url(#paint0_linear)"/>
+						<defs>
+							<linearGradient id="paint0_linear" x1="10" y1="-2" x2="10" y2="22" gradientUnits="userSpaceOnUse">
+							<stop stop-color="#BC9CFF"/>
+							<stop offset="1" stop-color="#8BA4F9"/>
+							</linearGradient>
+						</defs>
+					</svg>
+					<svg class="rateButton__list-item_inside" width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M10 13.4219L13.75 15.6719L12.7656 11.4062L16.0938 8.5L11.6875 8.125L10 4.09375L8.3125 8.125L3.90625 8.5L7.23438 11.4062L6.25 15.6719L10 13.4219ZM19.9844 7.23438L14.5469 11.9688L16.1875 19L10 15.25L3.8125 19L5.45312 11.9688L0.015625 7.23438L7.1875 6.625L10 0.015625L12.8125 6.625L19.9844 7.23438Z" fill="url(#paint0_linear)"/>
+						<defs>
+							<linearGradient id="paint0_linear" x1="10" y1="-2" x2="10" y2="22" gradientUnits="userSpaceOnUse">
+							<stop stop-color="#BC9CFF"/>
+							<stop offset="1" stop-color="#8BA4F9"/>
+							</linearGradient>
+						</defs>
+					</svg>
+				</label> 
+			</li>
+			<li class="rateButton__list-item">
+				<input type="radio" id="star-1" name="rating" value="1">
+				<label for="star-1" title="Оценка «1»">
+					<svg class="rateButton__list-item" width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M10 15.25L3.8125 19L5.45312 11.9688L0.015625 7.23438L7.1875 6.625L10 0.015625L12.8125 6.625L19.9844 7.23438L14.5469 11.9688L16.1875 19L10 15.25Z" fill="url(#paint0_linear)"/>
+						<defs>
+							<linearGradient id="paint0_linear" x1="10" y1="-2" x2="10" y2="22" gradientUnits="userSpaceOnUse">
+							<stop stop-color="#BC9CFF"/>
+							<stop offset="1" stop-color="#8BA4F9"/>
+							</linearGradient>
+						</defs>
+					</svg>
+					<svg class="rateButton__list-item_inside" width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M10 13.4219L13.75 15.6719L12.7656 11.4062L16.0938 8.5L11.6875 8.125L10 4.09375L8.3125 8.125L3.90625 8.5L7.23438 11.4062L6.25 15.6719L10 13.4219ZM19.9844 7.23438L14.5469 11.9688L16.1875 19L10 15.25L3.8125 19L5.45312 11.9688L0.015625 7.23438L7.1875 6.625L10 0.015625L12.8125 6.625L19.9844 7.23438Z" fill="url(#paint0_linear)"/>
+						<defs>
+							<linearGradient id="paint0_linear" x1="10" y1="-2" x2="10" y2="22" gradientUnits="userSpaceOnUse">
+							<stop stop-color="#BC9CFF"/>
+							<stop offset="1" stop-color="#8BA4F9"/>
+							</linearGradient>
+						</defs>
+					</svg>
+				</label>
+			</li>
+		</ul> -->
+	</div>		
+
+
+	<script src="script.js"></script>
 </body>
 </html>
 

@@ -1,3 +1,61 @@
+// calendar date-date
+(function ($) {
+			    $.fn.daterange = function () {
+			        // опции
+			        var opts = $.extend({
+			        		"monthNames": ['Января','Февраля','Марта','Апреля','Майя','Июня','Июля','Августа','Сентября','Октября','Ноября','Декабря'],
+			            "monthNamesShort": ['Янв','Фев','Мар','Апр','Май','Июн',
+			                    'Июл','Авг','Сен','Окт','Ноя','Дек'],
+			            "dayNames": ['воскресенье','понедельник','вторник','среда','четверг','пятница','суббота'],
+									"dayNamesShort": ['вск','пнд','втр','срд','чтв','птн','сбт'],
+			            "dayNamesMin": ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],
+			            "dateFormat": "d M",
+			            "changeMonth": false,
+			            "changeYear": false,
+			            "numberOfMonths": 2,
+			            "rangeSeparator": "-"
+			        }, arguments[0] || {}, {
+			            // обработчики событий datepicker
+			            // закрытие
+			            "onClose": function (dateText, inst) {
+			                if ($.isFunction(opts.callback)) {
+			                    opts.callback.apply(this, arguments);
+			                }
+			            },
+			            // выбор даты
+			            "onSelect": function (dateText, inst) {
+			                var textStart;
+			                if (!inst.rangeStart) {
+			                    inst.inline = true;
+			                    inst.rangeStart = dateText;
+			                } else {
+			                    inst.inline = false;
+			                    textStart = inst.rangeStart;
+			                    if (textStart !== dateText) {
+			                        $(this).val(textStart + " " + opts.rangeSeparator + " " + dateText);
+			                        inst.rangeStart = null;
+			                    }
+			                }
+			            }
+			        });
+
+			        return this.each(function () {
+			            var input = $(this);
+			            if (input.is("input")) {
+			                input.datepicker(opts);
+			            }
+			        });
+			    };
+
+			}(jQuery));
+
+			$("#d").daterange({
+			    callback: function (range) { 
+			    }
+			});
+
+
+
 	//Button dropdown plus, sub
 
 	function plus_0() { 
@@ -210,60 +268,24 @@ function show_Services(){
 
 
  // calendaar date - date
-			function date__calendar(){
-				(function ($) {
 
-			    $.fn.daterange = function () {
-			        // опции
-			        var opts = $.extend({
-			        		"monthNames": ['Января','Февраля','Марта','Апреля','Майя','Июня','Июля','Августа','Сентября','Октября','Ноября','Декабря'],
-			            "monthNamesShort": ['Янв','Фев','Мар','Апр','Май','Июн',
-			                    'Июл','Авг','Сен','Окт','Ноя','Дек'],
-			            "dayNames": ['воскресенье','понедельник','вторник','среда','четверг','пятница','суббота'],
-									"dayNamesShort": ['вск','пнд','втр','срд','чтв','птн','сбт'],
-			            "dayNamesMin": ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],
-			            "dateFormat": "d M",
-			            "changeMonth": false,
-			            "changeYear": false,
-			            "numberOfMonths": 2,
-			            "rangeSeparator": "-"
-			        }, arguments[0] || {}, {
-			            // обработчики событий datepicker
-			            // закрытие
-			            "onClose": function (dateText, inst) {
-			                if ($.isFunction(opts.callback)) {
-			                    opts.callback.apply(this, arguments);
-			                }
-			            },
-			            // выбор даты
-			            "onSelect": function (dateText, inst) {
-			                var textStart;
-			                if (!inst.rangeStart) {
-			                    inst.inline = true;
-			                    inst.rangeStart = dateText;
-			                } else {
-			                    inst.inline = false;
-			                    textStart = inst.rangeStart;
-			                    if (textStart !== dateText) {
-			                        $(this).val(textStart + " " + opts.rangeSeparator + " " + dateText);
-			                        inst.rangeStart = null;
-			                    }
-			                }
-			            }
-			        });
+//mask date
+			$("#date").mask("99.99", {placeholder: "дд.мм" });
 
-			        return this.each(function () {
-			            var input = $(this);
-			            if (input.is("input")) {
-			                input.datepicker(opts);
-			            }
-			        });
-			    };
 
-			}(jQuery));
+// like
 
-			$("#d").daterange({
-			    callback: function (range) { 
-			    }
-			});
+
+function like(){
+	var show = document.getElementsByClassName('likeButton__button-img_active')[0];
+	var elem = document.getElementsByClassName('likeButton__button-img_active')[0].style.display;
+		if (elem == "inline-block"){
+			show.style.display = "none";
+			document.getElementsByClassName('likeButton__button-img')[0].style.display = "inline-block";
+		}else{
+			show.style.display = "inline-block";
+			document.getElementsByClassName('likeButton__button-img')[0].style.display = "none";
+
 		}
+}
+

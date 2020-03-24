@@ -9,3 +9,7 @@
 	font-style: normal;
 	font-weight: bold;
 }
+
+@mixin flex{
+	display: flex;
+}
