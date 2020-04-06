@@ -289,3 +289,11 @@ function like(){
 		}
 }
 
+// rating button
+
+var logID = 'log',
+  log = $('<div id="'+logID+'"></div>');
+$('body').append(log);
+  $('[type*="radio"]').change(function () {
+    var me = $(this);
+  });

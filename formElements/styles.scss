@@ -711,61 +711,159 @@ input[type="checkbox"], input[type="radio"]{
 
 
 /*stars rateButton*/
+$unchecked-star: '\2606';
+$unchecked-color: #888;
+$checked-star: '\2605';
+$checked-color: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+
+.star-cb-group {
+  /* remove inline-block whitespace */
+  	font-size: 0;
+  	left: -7px;
+	position: relative;
+  * {
+    font-size: 1rem;
+  }
+  /* flip the order so we can use the + and ~ combinators */
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  & > input {
+    display: none;
+    & + label {
+      /* only enough room for the star */
+      display: inline-block;
+      text-indent: 9999px;
+      width: 1em;
+      white-space: nowrap;
+      cursor: pointer;
+      &:before {
+        display: inline-block;
+        text-indent: -9999px;
+        content: $unchecked-star;
+        color: #8BA4F9;
+      }
+    }
+    &:checked ~ label:before,
+      & + label:hover ~ label:before,
+      & + label:hover:before {
+      content: $checked-star;
+      color: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+      text-shadow: 0 0 1px #333;
+    }
+  }
+  
+  /* the hidden clearer */
+  & > .star-cb-clear + label {
+    text-indent: -9999px;
+    width: .5em;
+    margin-left: -.5em;
+  }
+  & > .star-cb-clear + label:before {
+    width: .5em;
+  }
+
+  &:hover > input + label:before {
+    content: $unchecked-star;
+    color: #8BA4F9;
+    text-shadow: none;
+  }
+  &:hover > input + label:hover ~ label:before,
+  &:hover > input + label:hover:before {
+    content: #8BA4F9;
+    color: #8BA4F9;
+    text-shadow: 0 0 1px #8BA4F9;
+  }
+}
+
+// extra styles
+:root {
+  font-size: 2em;
+  font-family: Helvetica, arial, sans-serif;
+}
+
+fieldset {
+  border: 0;
+  width: 5em;
+  border-radius: 1px;
+  padding: 1em 1.5em 0.9em;
+  margin: 1em auto;
+}
+#log {
+  margin: 1em auto;
+  width: 5em;
+  text-align: center;
+  background: #8BA4F9;
+}
+h1 {
+  text-align: center;
+}
 
 .rateButton{
 
-	&__list{
+	&__form{
+		left: 587px;
+		top: 656px;
+		position: absolute;
+	}
 
-		@include list;
-		@include flex;
-
-		&-item{
-			display: block;
-
-			&_inside{
-				display: none;
-			}
-		}
+	&__title{
+		display: block;
+		margin-bottom: 16px;
+		font-family: Montserrat;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 12px;
+		line-height: 15px;
+		text-transform: uppercase;
+		color: #1F2041;
 	}
 }
 
+.richCHebox{
+	position: relative;
+	left: 587px;
+	width: 250px;
 
-.stars {
-  display: flex;
-  direction: rtl;
-  justify-content: space-between;
-  overflow: hidden;
-  width: 95px;
-  margin: 0 0 10px;
-}
-.stars__label {
-  position: relative;
-  width: 15px;
-  height: 15px;
-  filter: grayscale(1);
-  transition: .15s;
-  overflow: hidden;
-  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NDkxMSwgMjAxMy8xMC8yOS0xMTo0NzoxNiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpBODE5OTIzM0VEMTIxMUU2ODAxRkY1QkNEOUNGNTNBRSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpBODE5OTIzNEVEMTIxMUU2ODAxRkY1QkNEOUNGNTNBRSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkE4MTk5MjMxRUQxMjExRTY4MDFGRjVCQ0Q5Q0Y1M0FFIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkE4MTk5MjMyRUQxMjExRTY4MDFGRjVCQ0Q5Q0Y1M0FFIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+qPqbrAAAAddJREFUeNpMUzsvBFEYPXNnH+xaxHqHSERWokDhkS00CiReP8APEJ0/oBE9nUQtatXqKERUGhItIiJRWNZjsTtznfnmM3Zmztz57v1e59w7jl0H0ERkiCr+L4f4wQziOOP3RzTvEt/A7WMGJpq04hyiKg4GFezS7hO7EgaJn14xeftqtROe2haTdO5HAsNMcy3rCeJdfXiZqEVfRzdKOy104piTaq6uWx3FxanhWVX+YWvLktpigXB5eyj9t+1zImh7lughriSZpYuHATRgHHWSMItXrPGrwLUuYW+RS5mfskO1p1jtiM5pUTxNNOqYUKE+iaBqoPmb8i5hxbD+KVvPsGYh4mw0MEiQVPuPcwyXtFsYd2BEOY+N+JgnVoWTp1tW1u3xlKuPLWKEdjHoKIaUipSUdvf4TjFoW6p8aWBZxj36bciu+GHSGIb4Ua9KG+GTj7bO1fFLuE9QFwiCYlmysBsaaGVPm3k/UeW4nC9gn1hkglZpv4Qx0rlQ7nw6as5akY4vDEwx0JEtPGGSQSY+puLdFHEJnQzWE+bYzZoD/45zZs5R+16m+BQdqipesGZ4zhuZJDqeD3wHuEMbnnEobFwGmpq/K/wD8uxqBzcYxT0t4leAAQA4Q5FZyHThVAAAAABJRU5ErkJggg==');
-}
+	&__title{
+		@include title;
+	}
 
-.stars__label:hover,
-.stars__label:hover ~ .stars__label,
-.stars__label.checked,
-.stars__label.checked ~ .stars__label {
-  filter: grayscale(0);
-}
+	&__checkbox{
 
-.stars__input {
-  position: absolute;
-  left: -5px;
-  top: -5px;
-  width: 30px;
-  height: 30px;
-  margin: 0;
-  border-radius: 0;
-  opacity: 0;
-}
+		&>input{
+			float: left;
+		}
 
-.result {
-  margin-top: 10px;
+		&-title{
+			width: 230px;
+			font-family: Montserrat;
+			font-style: normal;
+			font-weight: bold;
+			font-size: 14px;
+			line-height: 18px;
+			color: rgba(31, 32, 65, 0.75);
+			margin: 0 0 5px 0; 
+		}
+
+		&-subtitle{
+			width: 247px;
+			font-family: Montserrat;
+			font-style: normal;
+			font-weight: normal;
+			font-size: 12px;
+			line-height: 14px;
+			color: rgba(31, 32, 65, 0.5);
+			padding-left: 24px;
+			margin: 0;
+
+			&_width{
+				width: 230px;	
+			}
+		}
+
+		&-text{
+			padding-top: 2px;
+			margin-bottom: 11px;
+		}
+	}
 }
