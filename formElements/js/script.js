@@ -297,3 +297,17 @@ $('body').append(log);
   $('[type*="radio"]').change(function () {
     var me = $(this);
   });
+
+
+// paginator
+
+
+function prev(){
+
+
+	if (document.getElementsByClassName('1')[0].style.color =="#fff"){
+			document.getElementsByClassName('prev')[0].style.display = "none";
+		}else{
+			document.getElementsByClassName('prev')[0].style.display = "inline-block";
+		}
+}
