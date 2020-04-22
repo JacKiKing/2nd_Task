@@ -28,13 +28,13 @@
 				<input type="date" name="date_in" class="formFind__date">
 			</div>
 			<div class="formFind__right">
-				<label for="date_out" class="formFind__label">Прибытие</label>
+				<label for="date_out" class="formFind__label">Выезд</label>
 				<br>
 				<input type="date" name="date_out" class="formFind__date">
 			</div>
 
 
-			<label for="dropdown_visiters">Гости</label>
+		<label for="dropdown_visiters">Гости</label>
 		<div name="dropdown_visiters" class="dropdown">
 			<div class="dropdown__list_visiters">Сколько гостей?</div>
 		   	<div onclick="showDropdown_visiters()" class="dropdown__list-container dropdown__list-container_visiters">
@@ -113,9 +113,74 @@
 					<path d="M9 0.984375L17.0156 9L9 17.0156L7.59375 15.6094L13.1719 9.98438H0.984375V8.01562H13.1719L7.59375 2.39062L9 0.984375Z" fill="white"/>
 				</svg>
 			</button> 
+			<div class="singUp__singIn">
+				<p class="singUp__singIn-text">Уже есть аккаунт на Toxin</p>
+				<button class="singUp__singIn-button">войти</button>
+			</div>
 		</div>
 	</form>
 
+	<form action="#">
+		<div class="book">
+			<span class="book__text">
+				№
+				<span class="book__text-number">888</span>
+				<span class="book__text-type">Люкс</span>
+				<span class="book__text-money">9 990&#8381;
+					<span class="book__text-money-period">в сутки</span>
+				</span>
+			</span>
+		</div>
+
+		<div class="kostil">
+			<div class="formFind__left">
+				<label for="date_in" class="formFind__label">Прибытие</label>
+				<br>
+				<input type="date" name="date_in" class="formFind__date">
+			</div>
+			<div class="formFind__right">
+				<label for="date_out" class="formFind__label">Выезд</label>
+				<br>
+				<input type="date" name="date_out" class="formFind__date">
+			</div>
+		<label for="dropdown_visiters">Гости</label>
+		<div name="dropdown_visiters" class="dropdown">
+			<div class="dropdown__list_visiters">Сколько гостей?</div>
+		   	<div onclick="showDropdown_visiters2()" class="dropdown__list-container dropdown__list-container_visiters">
+ 				<img src="./images/expand_more.png" alt="развернуть" class="dropdown__list-container-viewButton">
+ 			</div>
+			<ul class="input__list input__list_visiters">
+				<li class="input__list-cell_visiters">
+			    	<div class="dropdown__left">взрослые</div>
+			    	<div class="dropdown__container">
+			    		<a href="#" onclick="minus(3)" class="minus">&ndash;</a>
+				    	<div  class="tablo">0</div>
+				    	<a href="#"  onclick="plus(3)" class="plus">&plus;</a>
+			    	</div>
+			    </li>
+			    <li class="input__list-cell_visiters">
+					<div class="dropdown__left">дети</div>
+			    	<div class="dropdown__container">
+			    		<a href="#"  onclick="minus(4)" class="minus">&ndash;</a>
+			    		<div class="tablo">0</div>
+			    		<a href="#"  onclick="plus(4)" class="plus">&plus;</a>
+			    	</div>
+			    </li>
+			    <li class="input__list-cell_visiters">
+			    	<div class="dropdown__left">младенцы</div>
+			    	<div class="dropdown__container">
+						<a href="#"  onclick="minus(5)" class="minus">&ndash;</a>
+						<div class="tablo">0</div>
+						<a href="#"  onclick="plus(5)" class="plus">&plus;</a>
+			    	</div>
+			    </li>
+			    <li>
+			    	<button class="button__apply" onclick="apply2()">Применить</button>
+			    	<button class="button__reset" onclick="clears2()">Очистить</button>
+			    </li>
+		    </ul>
+		</div>
+	</form>
 		
 	<script src="script.js"></script>
 </body>
