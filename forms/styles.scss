@@ -233,6 +233,7 @@ body{
 }
 
 .button{
+
 	&__apply{
 		font-family: Montserrat;
 		font-style: normal;
@@ -312,7 +313,10 @@ body{
 		height: 20px;		
 	}
 }
-
+.buttonClickMe__book{
+		top: -14px;
+		position: relative;
+	}
 
 .singUp{
 	padding: 40px 30px 30px 30px;
@@ -661,8 +665,8 @@ body{
 .book{
 	position: absolute;
 	width: 320px;
-	height: 441px;
-	top: 150px;
+	height: 461px;
+	top: 42px;
 	left: 560px;
 	background: #fff;
 	font-size: 12px;
@@ -672,6 +676,7 @@ body{
 	border: 1px solid rgba(0, 0, 0, 0.12);
 	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
 	border-radius: 4px;
+	position: relative;
 
 	&__text{
 		font-family: Montserrat;
@@ -703,6 +708,70 @@ body{
 				font-size: 14px;
 			}
 			
+		}
+	}
+
+	&__result{
+		font-family: Montserrat;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		line-height: 24px;
+		color: rgba(31, 32, 65, 0.75);
+
+		&-left{
+			float: left;
+
+			&-text_last{
+				line-height: 18px;
+				margin: 0;
+				position: relative;
+				top: -33px;
+				max-width: 229px;
+			}
+
+			&-text{
+				max-width: 229px;
+
+				&-icon{
+					border: 1px solid rgba(31, 32, 65, 0.25);
+					border-radius: 50%;
+					width: 20px;
+					height: 20px;
+					text-align: center;
+					position: relative;
+					left: 216px;
+					top: -39px;
+
+					&_two{
+						top: -67px;
+					}
+				}
+			}
+		}
+
+		&-right{
+			float: right;
+			color: rgba(31, 32, 65, 0.75);
+			text-align: right;
+		}
+
+		&-final{
+			font-family: Quicksand;
+			font-style: normal;
+			font-weight: bold;
+			font-size: 19px;
+			line-height: 24px;
+			color: #1F2041;
+			display: block ruby;
+			top: -33px;
+			position: relative;
+
+			&-zone{
+				height: 5px;
+				border-bottom: 1px dashed rgba(31, 32, 65, 0.25);
+				width: 182px;
+			}
 		}
 	}
 }

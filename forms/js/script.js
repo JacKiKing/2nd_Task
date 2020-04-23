@@ -46,7 +46,16 @@
 	var num_one = Number(document.getElementsByClassName('tablo')[0].innerHTML);
 	var num_two = Number(document.getElementsByClassName('tablo')[1].innerHTML);
 	var num_three = Number(document.getElementsByClassName('tablo')[2].innerHTML);
-	document.getElementsByClassName('dropdown__list_visiters')[0].innerHTML = num_one + num_two + num_three;
+	var name;
+	var number = num_one + num_two + num_three;
+	if (number == 0){
+		name = "гостей"
+	}else if(number == 1){
+		name = "гость"
+	}else{
+		name = "гостя"
+	}
+	document.getElementsByClassName('dropdown__list_visiters')[0].innerHTML = number + " " + name;
 }
 
 function clears(){
@@ -73,7 +82,17 @@ function apply2(){
 var num_one = Number(document.getElementsByClassName('tablo')[3].innerHTML);
 var num_two = Number(document.getElementsByClassName('tablo')[4].innerHTML);
 var num_three = Number(document.getElementsByClassName('tablo')[5].innerHTML);
-document.getElementsByClassName('dropdown__list_visiters')[1].innerHTML = num_one + num_two + num_three;
+var name;
+var number = num_one + num_two + num_three;
+if (number == 0){
+	name = "гостей"
+}else if(number == 1){
+	name = "гость"
+}else{
+	name = "гостя"
+}
+document.getElementsByClassName('dropdown__list_visiters')[1].innerHTML = number + " " + name;
+
 }
 
 function clears2(){
