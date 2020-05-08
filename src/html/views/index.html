@@ -1,0 +1,18 @@
+<% var data = {
+  title: "Заголовок | Проект",
+  author: "Chernetsov"
+}; %>
+<%= _.template(require('./../includes/header.html').default)(data) %>
+<body>
+	
+	<%= _.template(require('./../includes/logo.html').default)(data) %>
+
+	<%= _.template(require('./../includes/colorList.html').default)(data) %>
+
+	<%= _.template(require('./../includes/titles.html').default)(data) %>
+
+ 	<script src="./js/bundle.js"></script> 
+</body>
+</html>
+
+

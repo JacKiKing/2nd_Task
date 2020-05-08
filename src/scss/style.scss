@@ -1,0 +1,17 @@
+/*@import "bootstrap/bootstrap";*/
+@import "mixins.scss";
+@import "../fonts/fonts.css";
+/*@import "../css/style.bundle.css";*/
+@import "logo.scss";
+@import "listColor.scss";
+@import "title.scss";
+@import "media.scss";
+
+html{
+  min-width: 650px;
+  margin: 0;
+}
+
+body{
+  margin: 0;
+}
