@@ -1,0 +1,23 @@
+.textField{
+	&__input{
+		@include form__input;
+		width: 320px;
+		height: 44px;
+		margin: 48px 0 10px 141px;
+		padding: 13px 0 13px 15px;
+		color: rgba(31, 32, 65, 0.25);
+
+		&:hover{
+			color: rgba(31, 32, 65, 0.75);
+			border-color: rgba(31, 32, 65, 0.5);
+		}
+	}
+}
+.label{
+		@include form_title;
+		margin: 70px 0 0 140px;
+		font-weight: 900;
+		font-size: 13px;
+		position: relative;
+		top: 51px;
+}

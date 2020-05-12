@@ -1,0 +1,49 @@
+
+
+.mask-date{
+	background: #FFFFFF;
+	border: 1px solid rgba(31, 32, 65, 0.25);
+	box-sizing: border-box;
+	border-radius: 4px;
+	color: rgba(31, 32, 65, 0.25);
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 24px;
+	width: 320px;
+	height: 44px;
+}
+
+.date{
+	&__calendar{
+		background: #FFFFFF;
+		border: 1px solid rgba(31, 32, 65, 0.25);
+		box-sizing: border-box;
+		border-radius: 4px;
+		width: 266px;
+		height: 44px;
+		color: rgba(31, 32, 65, 0.75);
+	}
+}
+
+#d{
+	width: 263px;
+	background: #FFFFFF;
+	border: 1px solid rgba(31, 32, 65, 0.25);
+	box-sizing: border-box;
+	border-radius: 4px;
+	padding: 12px 0 8px 15px;
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 24px;
+	color: rgba(31, 32, 65, 0.75);
+}
+
+.label{
+	&_margin{
+				margin-top: 40.5px;
+			}
+}

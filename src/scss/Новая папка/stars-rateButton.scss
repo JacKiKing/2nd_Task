@@ -1,0 +1,163 @@
+/*stars rateButton*/
+$unchecked-star: '\2606';
+$unchecked-color: #888;
+$checked-star: '\2605';
+$checked-color: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+
+.star-cb-group {
+  /* remove inline-block whitespace */
+  	font-size: 0;
+  	left: -7px;
+	position: relative;
+  * {
+    font-size: 1rem;
+  }
+  /* flip the order so we can use the + and ~ combinators */
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  & > input {
+    display: none;
+    & + label {
+      /* only enough room for the star */
+      display: inline-block;
+      text-indent: 9999px;
+      width: 1em;
+      white-space: nowrap;
+      cursor: pointer;
+      &:before {
+        display: inline-block;
+        text-indent: -9999px;
+        content: $unchecked-star;
+        color: #8BA4F9;
+      }
+    }
+    &:checked ~ label:before,
+      & + label:hover ~ label:before,
+      & + label:hover:before {
+      content: $checked-star;
+      color: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+      text-shadow: 0 0 1px #333;
+    }
+  }
+  
+  /* the hidden clearer */
+  & > .star-cb-clear + label {
+    text-indent: -9999px;
+    width: .5em;
+    margin-left: -.5em;
+  }
+  & > .star-cb-clear + label:before {
+    width: .5em;
+  }
+
+  &:hover > input + label:before {
+    content: $unchecked-star;
+    color: #8BA4F9;
+    text-shadow: none;
+  }
+  &:hover > input + label:hover ~ label:before,
+  &:hover > input + label:hover:before {
+    content: #8BA4F9;
+    color: #8BA4F9;
+    text-shadow: 0 0 1px #8BA4F9;
+  }
+}
+
+// extra styles
+:root {
+  font-size: 2em;
+  font-family: Helvetica, arial, sans-serif;
+}
+
+fieldset {
+  border: 0;
+  width: 5em;
+  border-radius: 1px;
+  padding: 1em 1.5em 0.9em;
+  margin: 1em auto;
+}
+#log {
+  margin: 1em auto;
+  width: 5em;
+  text-align: center;
+  background: #8BA4F9;
+}
+h1 {
+  text-align: center;
+}
+
+.rateButton{
+
+	&__form{
+		left: 587px;
+		top: 656px;
+		position: absolute;
+	}
+
+	&__title{
+		display: block;
+		margin-bottom: 16px;
+		font-family: Montserrat;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 12px;
+		line-height: 15px;
+		text-transform: uppercase;
+		color: #1F2041;
+	}
+}
+
+.richCHebox{
+	position: relative;
+	left: 587px;
+	width: 250px;
+
+	&__title{
+		@include title;
+	}
+
+	&__checkbox{
+
+		&>input{
+			float: left;
+		}
+
+		&-title{
+			width: 230px;
+			font-family: Montserrat;
+			font-style: normal;
+			font-weight: bold;
+			font-size: 14px;
+			line-height: 18px;
+			color: rgba(31, 32, 65, 0.75);
+			margin: 0 0 5px 0; 
+		}
+
+		&-subtitle{
+			width: 247px;
+			font-family: Montserrat;
+			font-style: normal;
+			font-weight: normal;
+			font-size: 12px;
+			line-height: 14px;
+			color: rgba(31, 32, 65, 0.5);
+			padding-left: 24px;
+			margin: 0;
+
+			&_width{
+				width: 230px;	
+			}
+		}
+
+		&-text{
+			padding-top: 2px;
+			margin-bottom: 11px;
+		}
+	}
+}
+.richCHeboxConteiner{
+	margin-bottom: 232px;
+}
+
+
+

@@ -1,0 +1,82 @@
+/*BUTTONS*/
+
+.buttonClickMe{
+	position: absolute;
+	left: 979px;
+	top: 231px;
+
+		&__one{
+			width: 99px;
+			height: 44px;
+			background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+			border-radius: 22px;
+			text-transform: uppercase;
+			font-family: Montserrat;
+			font-style: normal;
+			font-weight: bold;
+			font-size: 12px;
+			line-height: 15px;
+			color: #fff;
+			border: none;
+
+			&:disabled{
+				opacity: 0.5;
+		}
+	}
+
+	&__two{
+			width: 99px;
+			height: 44px;
+			border-radius: 22px;
+			text-transform: uppercase;
+			font-family: Montserrat;
+			font-style: normal;
+			font-weight: bold;
+			font-size: 12px;
+			line-height: 15px;
+			color: #BC9CFF;
+			background-color: #fff;
+			border: 2px solid #BC9CFF;
+			margin-top: 30px;
+
+			&:disabled{
+				opacity: 0.5;
+		}
+	}
+
+	&__three{
+		margin-top: 30px;
+		border: 0;
+		color: #BC9CFF;
+		text-transform: uppercase;
+		background: #fff;
+		font-family: Montserrat;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 12px;
+		line-height: 15px;
+
+		&:disabled{
+			color: rgba(31, 32, 65, 0.5);
+		}
+	}
+
+	&__pay{
+		margin-top: 30px;
+		position: absolute;
+		width: 320px;
+		height: 44px;
+		background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+		border-radius: 22px;
+		border: 0;
+		text-align: center;
+		text-transform: uppercase;
+		color: #FFFFFF;
+
+		&>svg{
+			float: right;
+			width: 20px;
+			height: 20px;		
+		}
+	}
+}

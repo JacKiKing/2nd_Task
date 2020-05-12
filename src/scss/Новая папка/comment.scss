@@ -1,0 +1,63 @@
+
+/*comment*/
+
+
+.comment{
+	
+	position: absolute;
+	left: 600px;
+
+	&__leftBlock{
+		float: left;
+		height: 140px;
+		
+		&>img{
+			width: 88px;
+			height: 88px;
+		}
+
+		&-img{
+			&>.likeButton{
+				left: 22px;
+				top: -13px;
+				position: relative;
+			}
+		}
+	}
+
+	&__rightBlock{
+		width: 653px;
+		height: 72px;
+	}
+
+	&__title{
+		font-family: Montserrat;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 14px;
+		line-height: 24px;
+		color: rgba(31, 32, 65, 0.75);
+		margin-bottom: 12px;
+	}
+
+	&__subtext{
+		font-family: Montserrat;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		line-height: 24px;
+		color: rgba(31, 32, 65, 0.75);
+		margin-bottom: 12px;
+	}
+
+	&__text{
+		width: 728px;
+		height: 72px;
+		font-family: Montserrat;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		line-height: 24px;
+		color: rgba(31, 32, 65, 0.75)
+	}
+}

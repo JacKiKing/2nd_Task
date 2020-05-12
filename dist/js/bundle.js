@@ -18162,6 +18162,135 @@ module.exports = g;
 
 /***/ }),
 
+/***/ "./src/js/dropdown.js":
+/*!****************************!*\
+  !*** ./src/js/dropdown.js ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+//dropdown visiters
+plus_old.onclick = function plus() {
+
+		var a = document.getElementsByClassName("tablo")[0].innerHTML;
+		a++;
+		if(a == 1){
+			document.getElementsByClassName("minus")[0].style.color = 'rgba(31, 32, 65, 0.5)';
+			document.getElementsByClassName("minus")[0].style.border = '1px solid rgba(31, 32, 65, 0.5)';
+			
+		}
+		document.getElementsByClassName("tablo")[0].innerHTML= a;
+	}
+
+plus_child.onclick = function plus1() {
+	var a = document.getElementsByClassName("tablo")[1].innerHTML;
+	a++;
+	if(a == 1){
+		document.getElementsByClassName("minus")[1].style.color = 'rgba(31, 32, 65, 0.5)';
+		document.getElementsByClassName("minus")[1].style.border = '1px solid rgba(31, 32, 65, 0.5)';
+		
+	}
+	document.getElementsByClassName("tablo")[1].innerHTML= a;
+}
+
+plus_baby.onclick = function plus2() {
+	var a = document.getElementsByClassName("tablo")[2].innerHTML;
+	a++;
+	if(a == 1){
+		document.getElementsByClassName("minus")[2].style.color = 'rgba(31, 32, 65, 0.5)';
+		document.getElementsByClassName("minus")[2].style.border = '1px solid rgba(31, 32, 65, 0.5)';
+		
+	}
+	document.getElementsByClassName("tablo")[2].innerHTML= a;
+}
+
+minus_old.onclick = function minus() {
+	var a = document.getElementsByClassName("tablo")[0].innerHTML;
+	if(a > 0){
+		a--;
+	}
+	if(a == 0){
+		document.getElementsByClassName("minus")[0].style.color = 'rgba(31, 32, 65, 0.25)';
+		document.getElementsByClassName("minus")[0].style.border = '1px solid rgba(31, 32, 65, 0.25)';
+	}else{
+		document.getElementsByClassName("minus")[0].style.color = 'rgba(31, 32, 65, 0.5)';
+		document.getElementsByClassName("minus")[0].style.border = '1px solid rgba(31, 32, 65, 0.5)';
+	}
+	document.getElementsByClassName("tablo")[0].innerHTML= a;
+}
+
+minus_child.onclick = function minus1() {
+	var a = document.getElementsByClassName("tablo")[1].innerHTML;
+	if(a > 0){
+		a--;
+	}
+	if(a == 0){
+		document.getElementsByClassName("minus")[1].style.color = 'rgba(31, 32, 65, 0.25)';
+		document.getElementsByClassName("minus")[1].style.border = '1px solid rgba(31, 32, 65, 0.25)';
+	}else{
+		document.getElementsByClassName("minus")[1].style.color = 'rgba(31, 32, 65, 0.5)';
+		document.getElementsByClassName("minus")[1].style.border = '1px solid rgba(31, 32, 65, 0.5)';
+	}
+	document.getElementsByClassName("tablo")[1].innerHTML= a;
+}
+
+minus_baby.onclick = function minus2() {
+	var a = document.getElementsByClassName("tablo")[2].innerHTML;
+	if(a > 0){
+		a--;
+	}
+	if(a == 0){
+		document.getElementsByClassName("minus")[2].style.color = 'rgba(31, 32, 65, 0.25)';
+		document.getElementsByClassName("minus")[2].style.border = '1px solid rgba(31, 32, 65, 0.25)';
+	}else{
+		document.getElementsByClassName("minus")[2].style.color = 'rgba(31, 32, 65, 0.5)';
+		document.getElementsByClassName("minus")[2].style.border = '1px solid rgba(31, 32, 65, 0.5)';
+	}
+	document.getElementsByClassName("tablo")[2].innerHTML= a;
+}
+
+elem.onclick = function Show_dropbox(){
+		var item = document.getElementsByClassName('input__list_visiters')[0];
+		var pickcher = document.getElementsByClassName('dropdown__list-container-viewButton')[0];
+		if (item.style.display == "none"){
+			item.style.display = "inline-block";
+			pickcher.style.rotate = "180deg";
+		}else{
+			item.style.display = "none";
+			pickcher.style.rotate = "360deg";
+		}
+	}
+
+ok.onclick = function apply(){
+	var num_one = Number(document.getElementsByClassName('tablo')[0].innerHTML);
+	var num_two = Number(document.getElementsByClassName('tablo')[1].innerHTML);
+	var num_three = Number(document.getElementsByClassName('tablo')[2].innerHTML);
+	var name;
+	var number = num_one + num_two + num_three;
+	if (number == 0){
+		name = "гостей"
+	}else if(number == 1 ){
+		name = "гость"
+	}else if(number > 1 && number < 5){
+		name = "гостя"
+	}else{
+		name = "гостей"
+	}
+	if (number > 0){document.getElementsByClassName('button__reset')[0].style.display = "inline"}
+	document.getElementsByClassName('dropdown__list_visiters')[0].innerHTML = number + " " + name;
+}
+
+reset.onclick =function clears(){
+	document.getElementsByClassName('tablo')[0].innerHTML = "0";
+	document.getElementsByClassName('tablo')[1].innerHTML = "0";
+	document.getElementsByClassName('tablo')[2].innerHTML = "0";
+	document.getElementsByClassName('dropdown__list_visiters')[0].innerHTML = "Введите количество гостей";
+}
+
+
+
+/***/ }),
+
 /***/ "./src/js/index.js":
 /*!*************************!*\
   !*** ./src/js/index.js ***!
@@ -18176,10 +18305,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var popper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! popper.js */ "./node_modules/popper.js/dist/esm/popper.js");
 /* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.js");
 /* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(bootstrap__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _script_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./script.js */ "./src/js/script.js");
-/* harmony import */ var _script_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_script_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../scss/style.scss */ "./src/scss/style.scss");
-/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_scss_style_scss__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../scss/style.scss */ "./src/scss/style.scss");
+/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_scss_style_scss__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _dropdown_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./dropdown.js */ "./src/js/dropdown.js");
+/* harmony import */ var _dropdown_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_dropdown_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _rotebal_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./rotebal.js */ "./src/js/rotebal.js");
+/* harmony import */ var _rotebal_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_rotebal_js__WEBPACK_IMPORTED_MODULE_5__);
 
 
 
@@ -18187,125 +18318,26 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
- 
+
+
 global.jQuery = jquery__WEBPACK_IMPORTED_MODULE_0___default.a;
 global.$ = jquery__WEBPACK_IMPORTED_MODULE_0___default.a;
+
 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 
 /***/ }),
 
-/***/ "./src/js/script.js":
-/*!**************************!*\
-  !*** ./src/js/script.js ***!
-  \**************************/
+/***/ "./src/js/rotebal.js":
+/*!***************************!*\
+  !*** ./src/js/rotebal.js ***!
+  \***************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-//dropdown visiters
-	function plus(b) {
-		var a = document.getElementsByClassName("tablo")[b].innerHTML;
-		a++;
-		if(a == 1){
-			document.getElementsByClassName("minus")[b].style.color = 'rgba(31, 32, 65, 0.5)';
-			document.getElementsByClassName("minus")[b].style.border = '1px solid rgba(31, 32, 65, 0.5)';
-			
-			if(b < 2){
-				document.getElementsByClassName("button__reset")[0].style.display = 'inline-block';
-			}else{
-				document.getElementsByClassName("button__reset")[1].style.display = 'inline-block';
-			}
-		}
-		document.getElementsByClassName("tablo")[b].innerHTML= a;
-	}
-
-	function minus(b) {
-		var a = document.getElementsByClassName("tablo")[b].innerHTML;
-		if(a > 0){
-			a--;
-		}
-		if(a == 0){
-			document.getElementsByClassName("minus")[b].style.color = 'rgba(31, 32, 65, 0.25)';
-			document.getElementsByClassName("minus")[b].style.border = '1px solid rgba(31, 32, 65, 0.25)';
-			if(b < 2){
-				document.getElementsByClassName("button__reset")[0].style.display = 'none';
-			}else{
-				document.getElementsByClassName("button__reset")[1].style.display = 'none';
-			}
-
-		}
-		document.getElementsByClassName("tablo")[b].innerHTML= a;
-	}
-
-	function showDropdown_visiters(){
-		var item = document.getElementsByClassName('input__list_visiters')[0];
-		if (item.style.display == "none"){
-			item.style.display = "inline-block";
-		}else{
-			item.style.display = "none";
-		}
-	}
-
-	function apply(){
-	var num_one = Number(document.getElementsByClassName('tablo')[0].innerHTML);
-	var num_two = Number(document.getElementsByClassName('tablo')[1].innerHTML);
-	var num_three = Number(document.getElementsByClassName('tablo')[2].innerHTML);
-	var name;
-	var number = num_one + num_two + num_three;
-	if (number == 0){
-		name = "гостей"
-	}else if(number == 1){
-		name = "гость"
-	}else{
-		name = "гостя"
-	}
-	document.getElementsByClassName('dropdown__list_visiters')[0].innerHTML = number + " " + name;
-}
-
-function clears(){
-	document.getElementsByClassName('tablo')[0].innerHTML = "0";
-	document.getElementsByClassName('tablo')[1].innerHTML = "0";
-	document.getElementsByClassName('tablo')[2].innerHTML = "0";
-	document.getElementsByClassName('dropdown__list_visiters')[0].innerHTML = "0";
-}
-
-
-//dropdown visiters 2
-
-
-function showDropdown_visiters2(){
-	var item = document.getElementsByClassName('input__list_visiters')[1];
-	if (item.style.display == "none"){
-		item.style.display = "inline-block";
-	}else{
-		item.style.display = "none";
-	}
-}
-
-function apply2(){
-var num_one = Number(document.getElementsByClassName('tablo')[3].innerHTML);
-var num_two = Number(document.getElementsByClassName('tablo')[4].innerHTML);
-var num_three = Number(document.getElementsByClassName('tablo')[5].innerHTML);
-var name;
-var number = num_one + num_two + num_three;
-if (number == 0){
-	name = "гостей"
-}else if(number == 1){
-	name = "гость"
-}else{
-	name = "гостя"
-}
-document.getElementsByClassName('dropdown__list_visiters')[1].innerHTML = number + " " + name;
-
-}
-
-function clears2(){
-	document.getElementsByClassName('tablo')[3].innerHTML = "0";
-	document.getElementsByClassName('tablo')[4].innerHTML = "0";
-	document.getElementsByClassName('tablo')[5].innerHTML = "0";
-	document.getElementsByClassName('dropdown__list_visiters')[1].innerHTML = "0";
-}
-
+// elem.onclick = function() {
+//     alert('Спасибо');
+//   };
 
 /***/ }),
 

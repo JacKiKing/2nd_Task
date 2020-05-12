@@ -3,10 +3,9 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <!--bootstrap-->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" type="text/css" href="./css/style.bundle.css" >
-  <title>Document</title>
+  <title>Form Elements</title>
 </head>
 <body>
 	
@@ -18,75 +17,64 @@
 	</svg>
 </div>
 
-	<div class="listColor">
-	<div class="listColor__item">
-		<div class="listColor__item-colorSqure"></div>
-		<div class="listColor__item-text"><b>Dark Shade 100%</b>
-			<br/>
-			<div class="listColor__item-subtext">#1F2041</div>
-		</div>
-	</div>
-	<div class="listColor__item">
-		<div class="listColor__item-colorSqure"></div>
-		<div class="listColor__item-text"><b>Dark Shade 75%</b>
-			<br/>
-			<div class="listColor__item-subtext">#1F2041</div>
-		</div>
-	</div>
-	<div class="listColor__item">
-		<div class="listColor__item-colorSqure"></div>
-		<div class="listColor__item-text"><b>Dark Shade 50%</b>
-			<br/>
-			<div class="listColor__item-subtext">#1F2041</div>
-		</div>
-	</div>
-	<div class="listColor__item">
-		<div class="listColor__item-colorSqure"></div>
-		<div class="listColor__item-text"><b>Dark Shade 25%</b>
-			<br/>
-			<div class="listColor__item-subtext">#1F2041</div>
-		</div>
-	</div>
-	<div class="listColor__item">
-		<div class="listColor__item-colorSqure"></div>
-		<div class="listColor__item-text"><b>Dark Shade 5%</b>
-			<br/>
-			<div class="listColor__item-subtext">#1F2041</div>
-		</div>
-	</div>
-	<div class="listColor__item">
-		<div class="listColor__item-colorSqure"></div>
-		<div class="listColor__item-text listColor__item-text_mod"><b>Purple</b>
-			<br/>
-			<div class="listColor__item-subtext listColor__item-subtext_modSize">#BC9CFF</div>
-		</div>
-	</div>
-	<div class="listColor__item">
-		<div class="listColor__item-colorSqure"></div>
-		<div class="listColor__item-text"><b>Green</b>
-			<br/>
-			<div class="listColor__item-subtext listColor__item-subtext_modSize">#6FCF97</div>
-		</div>
-	</div>
+	<label class="label" for="textField__input">TEXT FIELD</label>
+<br>
+<input class="textField__input" type="text" placeholder="Email">
+
+	<div class="container__dropdown">
+	<label for="dropdown_visiters" class="dropdown__label">Dropdown</label>
+	<div name="dropdown_visiters" class="dropdown">
+		<div class="dropdown__list_visiters">Сколько гостей?</div>
+	   	<div  id="elem" class="dropdown__list-container dropdown__list-container_visiters">
+				<img src="../img/expand_more.png" alt="развернуть" class="dropdown__list-container-viewButton">
+			</div>
+		<ul class="input__list input__list_visiters" style="display: none;">
+			<li class="input__list-cell_visiters">
+		    	<div class="dropdown__left">взрослые</div>
+		    	<div class="dropdown__container">
+		    		<a href="#" id="minus_old" class="minus">&ndash;</a>
+			    	<div  class="tablo">0</div>
+			    	<a href="#"  id="plus_old" class="plus">&plus;</a>
+		    	</div>
+		    </li>
+		    <li class="input__list-cell_visiters">
+				<div class="dropdown__left">дети</div>
+		    	<div class="dropdown__container">
+		    		<a href="#" id="minus_child" class="minus">&ndash;</a>
+		    		<div class="tablo">0</div>
+		    		<a href="#" id="plus_child" class="plus">&plus;</a>
+		    	</div>
+		    </li>
+		    <li class="input__list-cell_visiters">
+		    	<div class="dropdown__left">младенцы</div>
+		    	<div class="dropdown__container">
+					<a href="#" id="minus_baby" class="minus">&ndash;</a>
+					<div class="tablo">0</div>
+					<a href="#" id="plus_baby" class="plus">&plus;</a>
+		    	</div>
+		    </li>
+		    <li>
+		    	<button id="ok" class="button__apply" onclick="apply()">Применить</button>
+		    	<button id="reset" class="button__reset" onclick="clears()">Очистить</button>
+		    </li>
+	    </ul>
+	</div>    
 </div>
 
+	<!-- mask-date -->
+<label for="maskedTextField">masked text field</label>
+<p>
+	<input type="text" id="date" name="maskedTextField"  placeholder="ДД.ММ.ГГГГ" class="mask-date form-control">
+</p>
+			
 
-	<div class="titles">
-	<div class="titles__container">
-		<h1 class="titles__h1 titles__headers">H1</h1>
-		<h2 class="titles__h2 titles__headers">H2</h2>
-		<h3 class="titles__h3 titles__headers">H3</h3>
-		<p class="titles__p  titles__headers">Body</p>
-	</div>
-	<div class="titles__container-text">
-		<h1 class="titles__text_1">This one is the sub-section or widget title </h1>
-		<h2 class="titles__text_2">Next one is the item title inside widgets</h2>
-		<h3 class="titles__text_3">This is a label or CTA text</h3>
-		<p class="titles__text_4">This is the body text which is used for most of the design, like paragraphs, lists, etc.</p>
-	</div>
-</div>	
 
+
+
+
+	
  	<script src="./js/bundle.js"></script> 
+
 </body>
 </html>
 

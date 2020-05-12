@@ -1,0 +1,39 @@
+<div class="container__dropdown">
+	<label for="dropdown_visiters" class="dropdown__label">Dropdown</label>
+	<div name="dropdown_visiters" class="dropdown">
+		<div class="dropdown__list_visiters">Сколько гостей?</div>
+	   	<div  id="elem" class="dropdown__list-container dropdown__list-container_visiters">
+				<img src="../img/expand_more.png" alt="развернуть" class="dropdown__list-container-viewButton">
+			</div>
+		<ul class="input__list input__list_visiters" style="display: none;">
+			<li class="input__list-cell_visiters">
+		    	<div class="dropdown__left">взрослые</div>
+		    	<div class="dropdown__container">
+		    		<a href="#" id="minus_old" class="minus">&ndash;</a>
+			    	<div  class="tablo">0</div>
+			    	<a href="#"  id="plus_old" class="plus">&plus;</a>
+		    	</div>
+		    </li>
+		    <li class="input__list-cell_visiters">
+				<div class="dropdown__left">дети</div>
+		    	<div class="dropdown__container">
+		    		<a href="#" id="minus_child" class="minus">&ndash;</a>
+		    		<div class="tablo">0</div>
+		    		<a href="#" id="plus_child" class="plus">&plus;</a>
+		    	</div>
+		    </li>
+		    <li class="input__list-cell_visiters">
+		    	<div class="dropdown__left">младенцы</div>
+		    	<div class="dropdown__container">
+					<a href="#" id="minus_baby" class="minus">&ndash;</a>
+					<div class="tablo">0</div>
+					<a href="#" id="plus_baby" class="plus">&plus;</a>
+		    	</div>
+		    </li>
+		    <li>
+		    	<button id="ok" class="button__apply" onclick="apply()">Применить</button>
+		    	<button id="reset" class="button__reset" onclick="clears()">Очистить</button>
+		    </li>
+	    </ul>
+	</div>    
+</div>

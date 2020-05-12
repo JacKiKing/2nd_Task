@@ -1,0 +1,60 @@
+/*dignities*/
+
+.dignities{
+	font-family: Montserrat;
+	font-style: normal;
+	width: 280px;
+	font-size: 14px;
+	line-height: 24px;
+
+	/* or 171% */
+
+	/* Dark 75% */
+	color: rgba(31, 32, 65, 0.75);
+
+	&__block{
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		border-bottom: 1px solid rgba(31, 32, 65, 0.1);
+		margin-top: 23px;
+
+		&-img{
+			width: 48px;
+			height: 48px;
+			margin-right: 10px;
+		}
+		
+		&-text{
+			&-title{
+				font-weight: bold;
+			}
+
+			&-subtext{
+				margin-bottom: 17px;
+			}
+			
+		}
+	}
+}
+
+.checkboxConteiner{
+	position: absolute;
+	top: 143px;
+	left: 587px;
+
+	&>.services__checkbox{
+		width: 192px;
+		display: flex;
+	}
+}
+
+.container{
+	margin: 0;
+    width: 370px;
+    left: 141px;
+    top: 143px;
+    position: relative;
+}

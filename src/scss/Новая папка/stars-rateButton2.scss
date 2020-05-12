@@ -1,0 +1,507 @@
+/*stars rateButton*/
+$unchecked-star: '\2606';
+$unchecked-color: #888;
+$checked-star: '\2605';
+$checked-color: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+
+.star-cb-group {
+  /* remove inline-block whitespace */
+  	font-size: 0;
+  	left: -7px;
+	position: relative;
+  * {
+    font-size: 1rem;
+  }
+  /* flip the order so we can use the + and ~ combinators */
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  & > input {
+    display: none;
+    & + label {
+      /* only enough room for the star */
+      display: inline-block;
+      text-indent: 9999px;
+      width: 1em;
+      white-space: nowrap;
+      cursor: pointer;
+      &:before {
+        display: inline-block;
+        text-indent: -9999px;
+        content: $unchecked-star;
+        color: #8BA4F9;
+      }
+    }
+    &:checked ~ label:before,
+      & + label:hover ~ label:before,
+      & + label:hover:before {
+      content: $checked-star;
+      color: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+      text-shadow: 0 0 1px #333;
+    }
+  }
+  
+  /* the hidden clearer */
+  & > .star-cb-clear + label {
+    text-indent: -9999px;
+    width: .5em;
+    margin-left: -.5em;
+  }
+  & > .star-cb-clear + label:before {
+    width: .5em;
+  }
+
+  &:hover > input + label:before {
+    content: $unchecked-star;
+    color: #8BA4F9;
+    text-shadow: none;
+  }
+  &:hover > input + label:hover ~ label:before,
+  &:hover > input + label:hover:before {
+    content: #8BA4F9;
+    color: #8BA4F9;
+    text-shadow: 0 0 1px #8BA4F9;
+  }
+}
+
+// extra styles
+:root {
+  font-size: 2em;
+  font-family: Helvetica, arial, sans-serif;
+}
+
+fieldset {
+  border: 0;
+  width: 5em;
+  border-radius: 1px;
+  padding: 1em 1.5em 0.9em;
+  margin: 1em auto;
+}
+#log {
+  margin: 1em auto;
+  width: 5em;
+  text-align: center;
+  background: #8BA4F9;
+}
+h1 {
+  text-align: center;
+}
+
+.rateButton{
+
+	&__form{
+		left: 587px;
+		top: 656px;
+		position: absolute;
+	}
+
+	&__title{
+		display: block;
+		margin-bottom: 16px;
+		font-family: Montserrat;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 12px;
+		line-height: 15px;
+		text-transform: uppercase;
+		color: #1F2041;
+	}
+}
+
+.richCHebox{
+	position: relative;
+	left: 587px;
+	width: 250px;
+
+	&__title{
+		@include title;
+	}
+
+	&__checkbox{
+
+		&>input{
+			float: left;
+		}
+
+		&-title{
+			width: 230px;
+			font-family: Montserrat;
+			font-style: normal;
+			font-weight: bold;
+			font-size: 14px;
+			line-height: 18px;
+			color: rgba(31, 32, 65, 0.75);
+			margin: 0 0 5px 0; 
+		}
+
+		&-subtitle{
+			width: 247px;
+			font-family: Montserrat;
+			font-style: normal;
+			font-weight: normal;
+			font-size: 12px;
+			line-height: 14px;
+			color: rgba(31, 32, 65, 0.5);
+			padding-left: 24px;
+			margin: 0;
+
+			&_width{
+				width: 230px;	
+			}
+		}
+
+		&-text{
+			padding-top: 2px;
+			margin-bottom: 11px;
+		}
+	}
+}/*@import "bootstrap/bootstrap";*/
+@import "mixins.scss";
+@import "fonts.css";
+.plus, .minus, #minus_0, #minus_1, #minus_2{
+	width: 30px;
+	height: 25px;
+	@include bold_Montserrat;
+	font-weight: normal;
+	font-size: 18px;
+	align-items: center;
+	text-align: center;
+	border: 1px solid rgba(31, 32, 65, 0.5);
+	border-radius: 50%;
+	color: rgba(31, 32, 65, 0.5);
+	cursor: pointer;
+	display: inline-block;
+	text-decoration: none;
+}
+.plus, .minus, #minus_0, #minus_1, #minus_2:hover{
+	text-decoration: none;
+}
+
+.minus, #minus_0, #minus_1, #minus_2{
+	border: 1px solid rgba(31, 32, 65, 0.25);
+	color: rgba(31, 32, 65, 0.5);
+}
+#minus_0:disabled {
+	border: 1px solid red;
+}
+
+.logo{
+	width: 48px;
+	height: 48px;
+	left: 30px;
+	top: 30px;
+	position: absolute;
+}
+.dropdown{
+	&__container{
+		float: right;
+		top: 4px;
+		right: 7px;
+		position: relative;
+	}
+
+	&__list{
+		display: flex;
+		width: 266px;
+		height: 44px;
+		background: #FFFFFF;
+		border: 1px solid rgba(31, 32, 65, 0.5);
+		box-sizing: border-box;
+		border-radius: 2px;
+		@include bold_Montserrat;
+		font-weight: normal;
+		font-size: 14px;
+		line-height: 24px;
+		margin-bottom: -16px;
+		color: rgba(31, 32, 65, 0.75);
+		padding: 12.44px 0 17.45px 15px;
+
+		&-container{
+			left: 227px;
+			position: relative;
+			top: -26px;
+			width: 40px;
+			height: 40px;
+			cursor: pointer;
+
+			&_visiters{
+				left: 281px;
+				top: -40px;
+			}
+
+			&-viewButton{
+				top: 10px;
+				position: relative;
+				right: -8px;
+				width: 18px;
+				height: 11px;
+
+			}
+
+			&_date{
+				width: 155px;
+				left: 0;
+				top: 0;
+			}
+
+			&_date > img{
+				left: -27px;
+				top: 1px;
+				position: relative;
+			}
+		}
+	
+		&_visiters{
+			background: #FFFFFF;
+			border: 1px solid rgba(31, 32, 65, 0.5);
+			box-sizing: border-box;
+			border-radius: 2px;
+			width: 320px;
+			height: 44px;
+			padding: 12.5px 0 13.5px 15px;
+			font-family: Montserrat;
+			font-style: normal;
+			font-weight: normal;
+			font-size: 14px;
+			line-height: 18px;
+			color: rgba(31, 32, 65, 0.75);
+		}
+	}
+
+	&__left{
+		float: left;
+		top: 13px;
+		position: relative;
+		margin-left: 15px;
+		font-size: 12px;
+		line-height: 15px;
+		text-transform: uppercase;
+	}
+	&__input{
+		width: 320px;
+		height: 44px;
+		padding: 13px 0 13px 15px;
+		background: #FFFFFF;
+		border: 1px solid rgba(31, 32, 65, 0.25);
+		box-sizing: border-box;
+		border-radius: 4px;
+		@include bold_Montserrat;
+		font-weight: normal;
+		font-size: 14px;
+		line-height: 18px;
+		color: rgba(31, 32, 65, 0.25);
+
+		&:hover, &:focus{
+			font-size: 14px;
+			border: 1px solid rgba(31, 32, 65, 0.5);
+			color: rgba(31, 32, 65, 0.75);
+		}
+	}
+}
+.dropdown>ul>li>div, .dropdown>ul>li>div>div{
+	display: inline-block;
+}
+
+.dropdown>ul>li{
+	@include bold_Montserrat;
+	background: #FFFFFF;
+	box-sizing: border-box;
+	margin-left: -40px;
+}
+
+label{
+	@include bold_Montserrat;
+	font-size: 12px;
+	line-height: 15px;
+	text-transform: uppercase;
+	color: #1F2041;
+}
+
+.input{
+	&__list{
+		top: -24px;
+		position: relative;
+		display: none;
+		width: 266px;
+		height: 119px;
+		background-color: #FFFFFF;
+		border-bottom: 1px solid rgba(31, 32, 65, 0.5);
+		border-left: 1px solid rgba(31, 32, 65, 0.5);
+		border-right: 1px solid rgba(31, 32, 65, 0.5);		
+		box-sizing: border-box;
+		list-style-type: none;
+
+		&_visiters{
+			width: 320px;
+			height: 159px;
+			top: -40px;
+		}
+
+		&-cell{
+			height: 33%;
+
+					&_visiters{
+						height: 37px;
+					}
+		}
+	}
+	&__date{
+		font-family: Montserrat;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		line-height: 18px;
+		background: #FFFFFF;
+		border: 1px solid rgba(31, 32, 65, 0.25);
+		box-sizing: border-box;
+		border-radius: 4px;
+		color: rgba(31, 32, 65, 0.75);
+		padding: 11.56px 9px 8.44px 15px;
+		width: 138px;
+	}
+}
+
+.button{
+	&__apply{
+		font-family: Montserrat;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 12px;
+		line-height: 15px;
+		text-transform: uppercase;
+		color: #BC9CFF;
+		background-color: #fff;
+		border: 0;
+		padding: 19px 7px 13px 0;
+		float: right;
+		cursor: pointer;
+	}
+
+	&__reset{
+		display: none;
+		font-family: Montserrat;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 12px;
+		line-height: 15px;
+		text-transform: uppercase;
+		color: rgba(31, 32, 65, 0.5);
+		background-color: #fff;
+		border: 0;
+		padding: 19px 0 13px 14px;
+		cursor: pointer;
+	}
+}
+
+.tablo{
+	width: 11px;
+}
+
+.mask-date{
+	background: #FFFFFF;
+	border: 1px solid rgba(31, 32, 65, 0.25);
+	box-sizing: border-box;
+	border-radius: 4px;
+	color: rgba(31, 32, 65, 0.25);
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 24px;
+	width: 320px;
+	height: 44px;
+}
+
+.date{
+	&__calendar{
+		background: #FFFFFF;
+		border: 1px solid rgba(31, 32, 65, 0.25);
+		box-sizing: border-box;
+		border-radius: 4px;
+		width: 266px;
+		height: 44px;
+		color: rgba(31, 32, 65, 0.75);
+	}
+}
+
+#d{
+	width: 263px;
+	background: #FFFFFF;
+	border: 1px solid rgba(31, 32, 65, 0.25);
+	box-sizing: border-box;
+	border-radius: 4px;
+	padding: 12px 0 8px 15px;
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 24px;
+	color: rgba(31, 32, 65, 0.75);
+}
+
+.label{
+	&_margin{
+				margin-top: 40.5px;
+			}
+}
+
+.form{
+	&__email{
+		font-family: Montserrat;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		line-height: 24px;
+		color: rgba(31, 32, 65, 0.25);
+		padding: 12px 0 8px 15px;
+		background: #FFFFFF;
+		border: 1px solid rgba(31, 32, 65, 0.25);
+		box-sizing: border-box;
+		border-radius: 4px;
+		width: 263px;
+
+		&-right{
+			width: 40px;
+			height: 40px;
+			position: relative;
+			top: -35px;
+			left: 224px;
+			text-align: center;
+			color: #BC9CFF;
+		}
+	}
+}
+
+.services{
+	margin-top: 45px;
+	width: 206px;
+
+	&__title{
+		cursor: pointer;
+		font-family: Montserrat;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 12px;
+		line-height: 15px;
+		text-transform: uppercase;
+		color: #1F2041;
+
+		&-container{
+			display: none;
+			width: 181px;
+		}
+	}
+
+	&__checkbox{
+		margin: 0 10px 10px 0;
+		font-family: Montserrat;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		line-height: 18px;
+		color: rgba(31, 32, 65, 0.5);
+	}
+}
+
+input[type="checkbox"], input[type="radio"]{
+	margin-right: 10px;
+}

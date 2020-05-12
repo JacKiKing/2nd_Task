@@ -1,0 +1,36 @@
+/*bullet list*/
+
+.bulletList{
+	position: absolute;
+	left: 979px;
+	top: 865px;
+
+	&__title{
+		font-family: Montserrat;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 12px;
+		line-height: 15px;
+		text-transform: uppercase;
+		color: #1F2041;
+		margin-bottom: 10px;
+	}
+	&__list:before{
+		background: rgba(31, 32, 65, 0.25);
+		width: 10px;
+		height: 10px;
+	}
+	&__list{
+		padding-left: 13px;
+
+		&-cell{
+			font-family: Montserrat;
+			font-style: normal;
+			font-weight: normal;
+			font-size: 14px;
+			line-height: 24px;
+			color: rgba(31, 32, 65, 0.75);
+			width: 271.14px;
+		}
+	}
+}
