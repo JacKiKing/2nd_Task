@@ -1,0 +1,186 @@
+@media(max-width: 1200px){	
+	.title .titletext h1{		
+		font-size: 70px;		
+	}
+	.title .titletext em,
+	.hillsboro-video-description p{		
+		font-size: 13px;		
+	}
+	.about-text {
+		max-width: 500px;	
+	}
+	.about-text em,
+	.history-text p,
+	.hillsboro-text em {
+		font-size: 16px;	
+	}
+	.history-text {	
+		min-height: 360px;		
+	}	
+	.advantages-text {	
+		max-width: 700px;	
+	}
+	.advantages-text p,
+	.around-football-text p,
+	.negative-text p,
+	.vandalism-text p,
+	.about-fans-text p,
+	.attributes-text p,
+	.taunts-text .main-taunts,
+	.result-text p {	
+		font-size: 18px;	
+	}
+	.around-football-text {
+		max-width: 700px;
+	}
+	.negative-text {	
+		max-width: 720px;	
+	}		
+	.hillsboro-text {	
+		max-width: 500px;
+		margin-left: 30px;	
+	}	
+	.slider-image {	
+		width: 750px;
+		height: 450px;	
+	}
+	.vandalism-text {	
+		max-width: 700px;	
+	}
+	.about-fans-text {	
+		max-width: 680px;	
+	}	
+	.attributes-text {	
+		max-width: 700px;	
+	}	
+	.slider-2-image {	
+		width: 750px;
+		height: 450px;	
+	}
+	.taunts-text {	
+		max-width: 670px;	
+	}	
+	.taunts-text {	
+		font-size: 14px;	
+	}
+	.result-text {	
+		max-width: 680px;	
+	}
+}
+
+@media(max-width: 785px){
+	.title {
+		min-height: 350px;
+	}
+	.title .titletext h1{
+		font-size: 50px;
+		line-height: 80px;
+		margin-top: 50px;
+		margin-bottom: 50px;		
+	}
+	.title .titletext em {		
+		font-size: 11px;		
+	}
+	.about-text em,
+	.history-text p,
+	.hillsboro-text em {
+		font-size: 15px;
+		line-height: 18px;	
+	}
+	.advantages-text p,
+	.around-football-text p,
+	.negative-text p,
+	.vandalism-text p,
+	.about-fans-text p,
+	.attributes-text p,
+	.taunts-text .main-taunts,
+	.result-text p {	
+		font-size: 16px;
+		line-height: 18px;	
+	}
+	.taunts-text {	
+		font-size: 14px;
+		line-height: 18px;	
+	}
+	.history {
+
+	}
+	.history-text {
+		
+	}		
+	.advantages-text,
+	.negative-text,
+	.vandalism-text,
+	.attributes-text,	
+	.taunts-text,
+	.result-text {
+		padding-left: 20px;	
+		padding-right: 20px;
+	}
+	.hillsboro-video {
+		padding-left: 20px;
+    	padding-right: 20px;
+	}
+	.slider-image {	
+		width: 100%;
+		max-height: 300px;	
+    	position: relative;	
+	}
+	.slider-2-image {	
+		width: 100%;
+		max-height: 300px;		
+	}
+	.about-text,
+	.hillsboro-layout {
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+	.advantages-text,
+	.negative-text,
+	.vandalism-text,
+	.attributes-text,
+	.taunts-text {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+	.taunts-text {		
+		padding-bottom: 0;
+	}
+	.slider {
+		margin-top: 20px;
+	}
+	.slider-2 {
+		margin-top: 0;
+	}
+
+	.advantages-text p,
+	.negative-text p,
+	.vandalism-text p,
+	.attributes-text p,	
+	.taunts-text p,
+	.result-text p {
+		padding-left: 20px;	
+		padding-right: 20px;
+	}
+}
+
+@media(max-width: 640px){	
+	.title .titletext h1{
+		font-size: 35px;
+		line-height: 50px;				
+	}
+	.title .titletext em {		
+		font-size: 10px;		
+	}
+	.about-text,
+	.hillsboro-text {
+		padding-left: 20px;	
+		padding-right: 20px;
+	}
+	.hillsboro-text {
+		margin-left: 0;
+	}
+	.hillsboro-video-description p {
+		padding-left: 20px;
+	}
+}
